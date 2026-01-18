@@ -24,6 +24,7 @@ A beginner-focused guide to Claude Code—the command-line tool that brings AI i
 
 - **[Glossary](../reference/glossary.md)** — Claude Code terminology
 - **[Resources](../reference/resources.md)** — Official docs and community content
+- **[Prompts](../reference/prompts.md)** — General prompting best practices
 - **[People to Follow](../reference/people.md)** — Claude Code creators and educators
 
 ---
