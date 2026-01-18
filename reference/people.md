@@ -10,7 +10,7 @@ A curated list of prominent developers, educators, and thought leaders in the AI
 
 ### Geoffrey Huntley
 - **Twitter**: [@GeoffreyHuntley](https://x.com/GeoffreyHuntley)
-- **Description**: Creator of the original Ralph Wiggum bash loop technique for autonomous Claude Code execution
+- **Description**: Creator of the original Ralph Wiggum bash loop technique
 
 ### Andrej Karpathy
 - **Twitter**: [@karpathy](https://x.com/karpathy)
@@ -21,8 +21,8 @@ A curated list of prominent developers, educators, and thought leaders in the AI
 ## Educators & Content Creators
 
 ### Matt Pocock
-- **Website**: [aihero.dev](https://www.aihero.dev/)
 - **Twitter**: [@mattpocockuk](https://x.com/mattpocockuk)
+- **Website**: [aihero.dev](https://www.aihero.dev/)
 - **Description**: AI-assisted development, TypeScript, and coding education
 
 ### Alex Finn
