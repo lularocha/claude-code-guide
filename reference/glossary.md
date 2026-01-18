@@ -1,9 +1,5 @@
 # Glossary
 
-Terms and concepts specific to Claude Code.
-
----
-
 ## Claude Code
 
 The command-line tool from Anthropic that brings Claude into your terminal. It can read your files, run commands, and make changes to your codebase through natural conversation.
