@@ -14,7 +14,7 @@ A curated list of prominent developers, educators, and thought leaders in the AI
 
 ### Andrej Karpathy
 - **Twitter**: [@karpathy](https://x.com/karpathy)
-- **Description**: Previously Director of AI @ Tesla, founding team @ OpenAI, CS231n/PhD @ Stanford
+- **Description**: Previously Director of AI @ Tesla, founding team @ OpenAI, PhD @ Stanford
 
 ---
 
