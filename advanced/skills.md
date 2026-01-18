@@ -4,6 +4,8 @@
 
 **Skills** are folders containing instructions, scripts, and resources (with a `SKILL.md` file) that Claude automatically loads when relevant to your task.
 
+---
+
 ## Key Points
 
 - Transform Claude from general-purpose to specialized for specific tasks
@@ -12,13 +14,15 @@
 - Progressive disclosure: loads only what's needed, keeping context efficient
 - Released as an **open standard** (December 2025) - adopted by OpenAI too
 
+---
+
 ## How Skills Work
 
 At its simplest, a skill is a directory that contains a `SKILL.md` file. This file must start with YAML frontmatter containing required metadata: `name` and `description`.
 
 At startup, Claude pre-loads the name and description of every installed skill. The description field is how Claude decides whether to use your Skill.
 
-### Good Description Example
+### Good Description
 
 A good description answers two questions:
 1. **What does this Skill do?** - List the specific capabilities
@@ -29,6 +33,25 @@ A good description answers two questions:
 - Keep `SKILL.md` under 500 lines for optimal performance
 - If content exceeds this, split detailed reference material into separate files
 - Claude discovers supporting files through links in your `SKILL.md`
+
+### Read PDF Example
+
+Here's a simple example of what working with PDFs looks like using the pypdf library:
+
+```python
+from pypdf import PdfReader, PdfWriter
+
+# Read a PDF
+reader = PdfReader("document.pdf")
+print(f"Pages: {len(reader.pages)}")
+
+# Extract text
+text = ""
+for page in reader.pages:
+    text += page.extract_text()
+```
+
+---
 
 ## Installation
 
