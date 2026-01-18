@@ -2,11 +2,7 @@
 
 A beginner-focused guide to Claude Code—the command-line tool that brings AI into your development workflow.
 
----
-
 ## Getting Started
-
-New to Claude Code? Start here.
 
 - **[Install Claude Code](https://code.claude.com/docs/en/quickstart)** — Official setup guide
 - **[How to Talk to Claude Code](../getting-started/talking-to-claude.md)** — Effective communication patterns
@@ -14,8 +10,6 @@ New to Claude Code? Start here.
 ---
 
 ## Advanced
-
-Techniques for power users.
 
 - **[Advanced Techniques](../advanced/advanced-techniques.md)** — Workflows and automation
 - **[Setting Up CLAUDE.md](../advanced/claude-md-guide.md)** — Project-specific instructions
@@ -25,8 +19,6 @@ Techniques for power users.
 ---
 
 ## Reference
-
-Quick lookup for terms and resources.
 
 - **[Glossary](../reference/glossary.md)** — Claude Code terminology
 - **[Resources](../reference/resources.md)** — Official docs and community content
