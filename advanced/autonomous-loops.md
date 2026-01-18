@@ -1,10 +1,11 @@
 # Ralph Wiggun Loop
 
-## IMPORTANT NOTE
+### IMPORTANT NOTE
 
 **Don't use Anthropic's plugin version, use the original Geoffrey Huntley vision**
 
-More info: https://x.com/gmickel/status/2009939771171434867
+Here is why: https://x.com/gmickel/status/2009939771171434867
+
 Geoffrey Huntley on Twitter: https://x.com/GeoffreyHuntley
 
 ---
