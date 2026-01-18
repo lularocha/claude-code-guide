@@ -567,15 +567,17 @@
 
             .mobile-section {
                 margin-bottom: 0.5rem;
+                background: transparent;
             }
 
+            /* Active state: whole section has #ff0 */
             .mobile-section.active {
-                background: #ff9;
+                background: #ff0;
             }
 
-            .mobile-section:has(.mobile-section-header.expanded):not(.active), 
-            .mobile-section:has(.mobile-section-header.expanded):not(.active) .mobile-section-header {
-                background: #ff0;
+            /* Expanded state (not active): whole section has #ff0 */
+            .mobile-section:has(.mobile-section-header.expanded):not(.active) {
+                background: #fd0;
             }
 
             .mobile-section-header {
@@ -583,7 +585,7 @@
                 align-items: center;
                 justify-content: space-between;
                 padding: 0.75rem 1rem;
-                background: #fe0;
+                background: transparent;
                 border: none;
                 font-size: 1rem;
                 font-weight: 600;
@@ -595,7 +597,6 @@
             }
 
             .mobile-section-header.active {
-                background: #ff9;
                 color: #000;
             }
 
@@ -628,10 +629,10 @@
                 transition: background-color 0.2s;
                 cursor: pointer;
                 margin-top: 0.25rem;
+                background: transparent;
             }
 
             .mobile-submenu-item.active {
-                background: #ff9;
                 color: #000;
                 font-weight: 600;
                 position: relative;
