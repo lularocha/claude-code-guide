@@ -13,10 +13,9 @@ A beginner-focused learning resource for Claude Code.
 ## File Organization
 
 - `home/` — Landing page and learning path
-- `getting-started/` — New user guides
-- `guides/` — Core concepts and best practices
-- `advanced/` — Power user techniques
-- `reference/` — Glossary, resources, people
+- `getting-started/` — Installation and effective communication with Claude Code
+- `advanced/` — Advanced techniques, CLAUDE.md guide, skills, and autonomous loops
+- `reference/` — Glossary, resources, and people to follow
 - `examples/` — Project showcases
 
 ## Writing Style
@@ -28,6 +27,10 @@ A beginner-focused learning resource for Claude Code.
 
 ## Important Notes
 
-- Do not add generic AI prompting advice
-- All content should specifically mention Claude Code features
-- Keep the learning path structure intact
+- Focus on Claude Code specific content only
+- Do not add generic AI/prompting advice
+- Keep navigation order: Getting Started → Advanced → Reference
+- Use h2 headers (##) for main topics with dividers (---) between sections
+- Add external link icons to all http/https links
+- Maintain consistent formatting across all pages
+- Update README.md and this CLAUDE.md when structure changes
