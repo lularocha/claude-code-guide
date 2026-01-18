@@ -1,4 +1,4 @@
-# Prompt Basics
+# Prompts
 
 ## Best Practices for Beginners
 
