@@ -15,20 +15,20 @@ This site documents my Claude Code learning journey, and it's built with Claude 
 
 ## View the Site
 
-Open `index.html` in your browser or run a local server:
+**Live Site:** https://ccguide.vercel.app
+
+Or run locally by opening `index.html` directly in your browser, or run any local server:
 
 ```bash
 # Using Python
-python -m http.server 8000
+python -m http.server
 
 # Using Node.js
 npx http-server
 
 # Using PHP
-php -S localhost:8000
+php -S localhost
 ```
-
-Then navigate to `http://localhost:8000`
 
 ## Key Features
 
