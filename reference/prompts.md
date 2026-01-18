@@ -5,7 +5,7 @@
 Top recommendations for effective prompting that can be used for any AI:
 
 - **Be specific** — Specific instructions work better than vague requests. Tell exactly what you want to see in the output.
-- **Provide context and examples** — Explain why you need something and show examples of what good output looks like (few-shot prompting). Use visuals like screenshots when possible.
+- **Provide context and examples** — Explain why you need something and show examples of what good output looks like. Use visuals like screenshots when possible.
 - **Tell what to do, not what to avoid** — Frame instructions positively ("Write in flowing prose") rather than negatively ("Don't use bullet points").
 - **[Anthropic Academy](https://www.anthropic.com/learn)** — General courses on prompting and building with Claude
 
