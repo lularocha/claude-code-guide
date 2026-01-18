@@ -506,7 +506,7 @@
                 bottom: 0;
                 width: 300px;
                 max-width: 80%;
-                background: #f0f0f0;
+                background: #fe0;
                 box-shadow: -2px 0 8px rgba(0,0,0,0.2);
                 transform: translateX(100%);
                 transition: transform 300ms ease-out;
@@ -549,12 +549,16 @@
             }
 
             .mobile-section.active {
-                background: #fff;
+                background: #ff9;
             }
 
-            .mobile-section:has(.mobile-section-header.expanded):not(.active),
+/*            .mobile-section:has(.mobile-section-header.expanded):not(.active){
+                border-bottom: 1px solid #bb0;
+            }*/
+
+            .mobile-section:has(.mobile-section-header.expanded):not(.active), 
             .mobile-section:has(.mobile-section-header.expanded):not(.active) .mobile-section-header {
-                background: #e3e3e3;
+                background: #ff0;
             }
 
             .mobile-section-header {
@@ -562,9 +566,8 @@
                 align-items: center;
                 justify-content: space-between;
                 padding: 0.75rem 1rem;
-                background: #f0f0f0;
+                background: #fe0;
                 border: none;
-                border-radius: 4px;
                 font-size: 1rem;
                 font-weight: 600;
                 color: #333;
@@ -575,7 +578,7 @@
             }
 
             .mobile-section-header.active {
-                background: #ffffff;
+                background: #ff9;
                 color: #000;
             }
 
@@ -605,14 +608,13 @@
                 padding: 0.5rem 1rem;
                 color: #333;
                 text-decoration: none;
-                border-radius: 4px;
                 transition: background-color 0.2s;
                 cursor: pointer;
                 margin-top: 0.25rem;
             }
 
             .mobile-submenu-item.active {
-                background: #ffffff;
+                background: #ff9;
                 color: #000;
                 font-weight: 600;
                 position: relative;
@@ -777,8 +779,8 @@
             advanced: [
                 { name: 'Advanced Techniques', path: 'advanced/advanced-techniques.md' },
                 { name: 'CLAUDE.md', path: 'advanced/claude-md-guide.md' },
-                { name: 'Skills', path: 'advanced/skills.md' },
-                { name: 'Autonomous Loops', path: 'advanced/autonomous-loops.md' }
+                { name: 'Autonomous Loops', path: 'advanced/autonomous-loops.md' },
+                { name: 'Skills', path: 'advanced/skills.md' }
             ],
             reference: [
                 { name: 'Glossary', path: 'reference/glossary.md' },
@@ -914,14 +916,16 @@
 
         // Update mobile menu active state
         function updateMobileMenuActive(category, path) {
+            const categoryDisplayName = getCategoryDisplayName(category).toLowerCase();
+
             document.querySelectorAll('.mobile-submenu-item').forEach(item => {
                 item.classList.toggle('active', item.dataset.path === path);
             });
             document.querySelectorAll('.mobile-section-header').forEach(header => {
                 const sectionCategory = header.textContent.toLowerCase();
-                header.classList.toggle('active', sectionCategory === category);
+                header.classList.toggle('active', sectionCategory === categoryDisplayName);
                 // Expand active section
-                if (sectionCategory === category) {
+                if (sectionCategory === categoryDisplayName) {
                     header.classList.add('expanded');
                 }
             });
@@ -930,9 +934,9 @@
                 const sectionHeader = section.querySelector('.mobile-section-header');
                 const submenu = section.querySelector('.mobile-submenu');
                 const sectionCategory = sectionHeader ? sectionHeader.textContent.toLowerCase() : '';
-                section.classList.toggle('active', sectionCategory === category);
+                section.classList.toggle('active', sectionCategory === categoryDisplayName);
                 // Expand active section's submenu
-                if (sectionCategory === category && submenu) {
+                if (sectionCategory === categoryDisplayName && submenu) {
                     submenu.classList.add('expanded');
                 }
             });
