@@ -1,9 +1,5 @@
 # Resources
 
-Curated resources for learning Claude Code.
-
----
-
 ## Claude Code Specific
 
 Primary resources for learning Claude Code itself.
@@ -26,6 +22,11 @@ Primary resources for learning Claude Code itself.
 
 ### Articles
 - **[Ralph Wiggum: Claude Code's new way to run autonomously](https://medium.com/@joe.njenga/ralph-wiggum-claude-code-new-way-to-run-autonomously-for-hours-without-drama-095f47fbd467)** — by Joe Njenga
+
+### Running Claude Code outside the Terminal
+
+- **[Claude Code on the Web](https://code.claude.com/docs/en/claude-code-on-the-web)** — Run Claude on a cloud infrastructure
+- **[Claude Desktop App](https://code.claude.com/docs/en/desktop)** — More user friendly experience
 
 ---
 

@@ -1,10 +1,11 @@
+
 # How to Talk to Claude Code
 
 Claude Code is different from chat-based AI. You're working together inside your actual codebase—Claude can see your files, run commands, and make changes. Here's how to communicate effectively.
 
 ## Think Colleague, Not Tool
 
-Talk to Claude like you would a developer sitting next to you:
+Talk to Claude like you would to a developer sitting next to you:
 
 - "Can you look at the auth module and tell me why login is failing?"
 - "I need to add a dark mode toggle to the settings page"
