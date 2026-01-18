@@ -49,6 +49,7 @@ Commands starting with `/` that trigger specific actions:
 - `/clear` — Reset conversation context
 - `/compact` — Summarize and compress context
 - `/cost` — Show token usage and cost
+- `/model` — Choose Opus, Sonnet, or Haiku
 - `/plan` — Enter plan mode
 
 You can also create custom slash commands for repetitive tasks.
