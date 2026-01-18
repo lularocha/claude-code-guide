@@ -5,7 +5,7 @@ A beginner-focused learning resource for Claude Code.
 ## Content Guidelines
 
 1. Focus exclusively on Claude Code (the CLI agent tool)
-2. Avoid generic AI/prompting advice that could apply to any chatbot
+2. Avoid generic AI/prompting advice that could apply to any chatbot (Exception: `reference/prompt-basics.md` provides general prompting context for beginners)
 3. Use practical, actionable examples
 4. Write for beginners who are learning
 5. Reference official Claude Code documentation when possible
@@ -28,7 +28,7 @@ A beginner-focused learning resource for Claude Code.
 ## Important Notes
 
 - Focus on Claude Code specific content only
-- Do not add generic AI/prompting advice
+- Do not add generic AI/prompting advice (except in `reference/prompt-basics.md`)
 - Keep navigation order: Getting Started → Advanced → Reference
 - Use h2 headers (##) for main topics with dividers (---) between sections
 - Add external link icons to all http/https links

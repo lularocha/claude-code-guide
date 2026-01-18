@@ -30,19 +30,6 @@ Primary resources for learning Claude Code itself.
 
 ---
 
-## Background Knowledge
-
-General AI and prompting concepts. Not Claude Code specific, but helpful context.
-
-### Prompt Engineering
-- **[Anthropic Academy](https://www.anthropic.com/learn)** — General courses on prompting and building with Claude
-- **[Prompt Engineering Guide](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview)** — Anthropic's comprehensive guide
-
-### Prompt Library
-- **[Anthropic Prompt Library](https://docs.anthropic.com/en/prompt-library/library)** — Ready-to-use prompt templates
-
----
-
 ## Note
 
 This site focuses specifically on **Claude Code**—the command-line agent tool.
