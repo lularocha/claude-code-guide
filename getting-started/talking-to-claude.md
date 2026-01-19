@@ -3,7 +3,7 @@
 
 ## Claude Code is different from chat-based AI
 
-You're working together inside your actual codebase—Claude can see your files, run commands, and make changes. Here's how to communicate effectively.
+You're working together inside your actual codebase where Claude can see your files, run commands, and make changes. Here's how to communicate effectively.
 
 ---
 
