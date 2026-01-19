@@ -9,8 +9,8 @@ It's my feedback learning loop: study, practice, learn, document, improve.**
 
 Claude Code is a command-line AI tool for your development workflow.
 
-- **[Install Claude Code](https://code.claude.com/docs/en/quickstart)** — Official setup guide
-- **[How to Talk to Claude Code](../getting-started/talking-to-claude.md)** — Effective communication patterns
+- **[Install](https://code.claude.com/docs/en/quickstart)** — Official Claude Code install and setup guide
+- **[Start talking](../getting-started/talking-to-claude.md)** — Effective communication patterns
 
 ---
 
