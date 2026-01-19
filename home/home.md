@@ -1,10 +1,13 @@
 # Learning Claude Code
 
-A beginner-focused guide to Claude Code—the command-line tool that brings AI into your development workflow.
+**This site documents my Claude Code learning journey, and it's built with Claude Code itself.<br>
+It's my feedback learning loop: study, practice, learn, document, improve.**
 
-<span class="last-updated">_Last updated: January 18, 2026._</span>
+<span class="last-updated">_Last updated: January 19, 2026._</span>
 
 ## Getting Started
+
+Claude Code is a command-line AI tool for your development workflow.
 
 - **[Install Claude Code](https://code.claude.com/docs/en/quickstart)** — Official setup guide
 - **[How to Talk to Claude Code](../getting-started/talking-to-claude.md)** — Effective communication patterns
@@ -26,14 +29,6 @@ A beginner-focused guide to Claude Code—the command-line tool that brings AI i
 - **[Resources](../reference/resources.md)** — Official docs and community content
 - **[Prompts](../reference/prompts.md)** — General prompting best practices
 - **[People to Follow](../reference/people.md)** — Claude Code creators and educators
-
----
-
-## About This Site
-
-This site documents my Claude Code learning journey, and it's built with Claude Code itself.
-
-It's my feedback learning loop: study, practice, learn, document, improve.
 
 ---
 
