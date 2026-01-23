@@ -4,7 +4,8 @@ A showcase of projects built with Claude Code.
 
 ## [Glossary Builder](https://sugiro-glossary.vercel.app/)
 
-Build glossaries powered by Claude AI. Just enter a single term (Seed Word) and automatically generate 12 related terms with clear definitions.
+Build glossaries powered by Claude AI.<br> 
+Just enter a single term (Seed Word) to generate 12 related terms with clear definitions.
 
 **Status**: Fully Operational
 
@@ -12,9 +13,11 @@ Build glossaries powered by Claude AI. Just enter a single term (Seed Word) and 
 
 ## [Prompt Builder](https://sugiro-prompt.vercel.app/)
 
-A tool for creating high-quality AI prompts using the strategy: Persona + Context + Constraints/Requirements + Examples.
+Create high-quality AI prompts.<br>
+Using the strategy: Context + Persona + Tech Stack + Examples.
 
-**Status**: Currently in testing. Some features requiring API integration are not yet implemented.
+**Status**: Currently in testing<BR>
+Some features requiring API integration are not yet implemented.
 
 _Note: Claude also offers a built-in [Prompt Generator](https://platform.claude.com/dashboard) in the Console (requires API account with credits)._
 
@@ -22,7 +25,9 @@ _Note: Claude also offers a built-in [Prompt Generator](https://platform.claude.
 
 ## [QR Code Generator](https://sugiro.io/qrcode/)
 
-Create QR codes instantly: no registration, no expiration, 100% free. Choose size and color, set error correction level, and download as PNG.
+Create QR codes instantly.<br>
+No registration, no expiration, 100% free.<br>
+Choose size and color, set error correction level, and download as PNG.
 
 **Status**: Fully Operational
 
@@ -32,7 +37,8 @@ _Note: Created with multiple AIs._
 
 ## [MyBTC Calculator](https://sugiro.io/mybtc/)
 
-Track Bitcoin prices with real-time conversions to SATS, USD, BRL, EUR, and GBP. Monitor percentage changes across multiple time periods.
+Track Bitcoin price with real-time conversions.<br>
+Convert BTC to SATS, USD, BRL, EUR, and GBP. Monitor percentage changes across multiple time periods.
 
 **Status**: Fully Operational
 
@@ -40,7 +46,7 @@ Track Bitcoin prices with real-time conversions to SATS, USD, BRL, EUR, and GBP.
 
 ## [Hash Cost Calculator](https://sugiro.io/hash/)
 
-Calculate the cost of power consumption for common home BTC miners. Use manufacturer values or enter custom values manually.
+Calculate the cost of power consumption for common home BTC miners. Use manufacturer values or enter your custom values manually.
 
 **Status**: Fully Operational
 
