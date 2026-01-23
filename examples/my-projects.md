@@ -38,7 +38,8 @@ _Note: Created with multiple AIs._
 ## [MyBTC Calculator](https://sugiro.io/mybtc/)
 
 Track Bitcoin price with real-time conversions.<br>
-Convert BTC to SATS, USD, BRL, EUR, and GBP. Monitor percentage changes across multiple time periods.
+Convert BTC to SATS, USD, BRL, EUR, and GBP.<br>
+Monitor percentage changes across multiple time periods.
 
 **Status**: Fully Operational
 
@@ -46,7 +47,8 @@ Convert BTC to SATS, USD, BRL, EUR, and GBP. Monitor percentage changes across m
 
 ## [Hash Cost Calculator](https://sugiro.io/hash/)
 
-Calculate the cost of power consumption for common home BTC miners. Use manufacturer values or enter your custom values manually.
+Calculate the cost of power consumption for common home BTC miners.<br>
+Use manufacturer values or enter your custom values manually.
 
 **Status**: Fully Operational
 
