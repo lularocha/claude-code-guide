@@ -47,7 +47,7 @@ Monitor percentage changes across multiple time periods.
 
 ## [Hash Cost Calculator](https://sugiro.io/hash/)
 
-Calculate the cost of power consumption for common home Bitcoin miners.<br>
+Calculate the cost of power consumption for common Bitcoin home miners.<br>
 Use manufacturer values or enter your custom values manually.
 
 **Status**: Fully Operational
