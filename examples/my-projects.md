@@ -22,7 +22,7 @@ _Note: Claude also offers a built-in [Prompt Generator](https://platform.claude.
 
 ## [QR Code Generator](https://sugiro.io/qrcode/)
 
-Create QR codes instantly: no registration, no expiration, 100% free.
+Create QR codes instantly: no registration, no expiration, 100% free. Choose size and color, set error correction level, and download as PNG.
 
 **Status**: Fully Operational
 
