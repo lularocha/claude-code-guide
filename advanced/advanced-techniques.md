@@ -9,6 +9,8 @@ Slash commands automate repetitive tasks and save significant time. Ask Claude t
 
 Commands can be global or project-specific depending on your needs.
 
+_Note: Slash Commands have been merged with Skills. [Check Thariq's post on X](https://x.com/trq212/status/2014836841846132761?s=46&t=xXOubYP77x-93VPw93nVnA)._
+
 ---
 
 ## Use Git Workflows
