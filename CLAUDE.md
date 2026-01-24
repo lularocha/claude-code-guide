@@ -25,6 +25,13 @@ A beginner-focused learning resource for Claude Code.
 - Provide code examples where relevant
 - Link to official docs rather than duplicating content
 
+## Git Workflow
+
+- When the user says "commit [description]", immediately commit and push all changes using their description
+- Do NOT look at git status, git diff, or read any files first - just execute directly
+- Use this command: `git add . && git commit -m "[user's description]\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>" && git push`
+- Example: User says "commit style change to text xyz in home page" → immediately execute the command with that exact description
+
 ## Important Notes
 
 - Focus on Claude Code specific content only
