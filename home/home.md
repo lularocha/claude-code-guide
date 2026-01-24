@@ -34,4 +34,5 @@ It's my feedback learning loop: study, practice, learn, document, improve.**
 
 ## Official Documentation
 
-The best place to start is the **[Claude Code Documentation](https://code.claude.com/docs/en/overview)**.
+- **[Claude Code Overview](https://code.claude.com/docs/en/overview)**
+- **[Claude Code Best Practices](https://code.claude.com/docs/en/overview)**
