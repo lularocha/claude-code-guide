@@ -902,6 +902,7 @@
                             e.preventDefault();
                             loadFile(file.path);
                             updateSidebarActive(file.path);
+                            updateMobileMenuActive(category, file.path);
                         });
                     }
 
@@ -956,10 +957,13 @@
             });
             document.querySelectorAll('.mobile-section-header').forEach(header => {
                 const sectionCategory = header.textContent.toLowerCase();
-                header.classList.toggle('active', sectionCategory === categoryDisplayName);
-                // Expand active section
-                if (sectionCategory === categoryDisplayName) {
+                const isActive = sectionCategory === categoryDisplayName;
+                header.classList.toggle('active', isActive);
+                // Expand active section, collapse others
+                if (isActive) {
                     header.classList.add('expanded');
+                } else {
+                    header.classList.remove('expanded');
                 }
             });
             // Update active section (parent div) and expand submenu
@@ -967,10 +971,15 @@
                 const sectionHeader = section.querySelector('.mobile-section-header');
                 const submenu = section.querySelector('.mobile-submenu');
                 const sectionCategory = sectionHeader ? sectionHeader.textContent.toLowerCase() : '';
-                section.classList.toggle('active', sectionCategory === categoryDisplayName);
-                // Expand active section's submenu
-                if (sectionCategory === categoryDisplayName && submenu) {
-                    submenu.classList.add('expanded');
+                const isActive = sectionCategory === categoryDisplayName;
+                section.classList.toggle('active', isActive);
+                // Expand active section's submenu, collapse others
+                if (submenu) {
+                    if (isActive) {
+                        submenu.classList.add('expanded');
+                    } else {
+                        submenu.classList.remove('expanded');
+                    }
                 }
             });
         }
@@ -1042,6 +1051,7 @@
                                     currentCategory = category;
                                     loadFile(targetPath);
                                     updateSidebarActive(targetPath);
+                                    updateMobileMenuActive(category, targetPath);
                                     return;
                                 }
                             }
