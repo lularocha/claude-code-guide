@@ -9,6 +9,8 @@
   </iframe>
 </div>
 
+Video by Roman Colman from [The Agentic Lab](https://www.skool.com/the-agentic-lab-6743/about), praised by Geoffrey Huntley (Ralph's creator) as "one of the best explainer videos for ralph that i have seen. declaring the official explanation".
+
 ---
 
 _Note: Don't use Anthropic's plugin version, use the original Geoffrey Huntley vision_
@@ -242,7 +244,11 @@ exit 1
 
 **Geoffrey Huntley** — [https://x.com/GeoffreyHuntley](https://x.com/GeoffreyHuntley)
 
-Don't us Anthropic's Ralph Loop Plugin, here is why: https://x.com/gmickel/status/2009939771171434867
+**Roman Colman** - [The Agentic Lab](https://www.skool.com/the-agentic-lab-6743/about)
+
+**Roman Colman** - [on Twitter/X](https://x.com/AgenticLab1)
+
+Don't use Anthropic's Ralph Loop Plugin, here is why: https://x.com/gmickel/status/2009939771171434867
 
 [Ralph Wiggum: Claude Code's new way to run autonomously](https://medium.com/@joe.njenga/ralph-wiggum-claude-code-new-way-to-run-autonomously-for-hours-without-drama-095f47fbd467)
 by [Joe Njenga](https://medium.com/@joe.njenga)

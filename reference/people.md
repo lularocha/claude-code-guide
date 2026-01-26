@@ -31,6 +31,12 @@ A curated list of prominent developers, educators, and thought leaders in the AI
 - **Notable Content**: [Working with Claude Code Desktop](https://www.youtube.com/watch?v=pZ2N7CJFbBk)
 - **Description**: Practical tutorials on Claude Code features, slash commands, and project setup
 
+### Roman Colman
+- **Twitter**: [@AgenticLab1](https://x.com/AgenticLab1)
+- **Community**: [The Agentic Lab](https://www.skool.com/the-agentic-lab-6743/about)
+- **Notable Content**: [Ralph Wiggun Loop explainer video](https://www.youtube.com/watch?v=I7azCAgoUHc)
+- **Description**: Creator of educational content on autonomous AI workflows and Claude Code techniques
+
 ---
 
 ## Writers & Technical Authors
