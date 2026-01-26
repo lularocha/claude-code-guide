@@ -17,7 +17,7 @@ _Note: Slash Commands have been merged with Skills. [Check Thariq's post on X](h
 
 Beyond basic commits, leverage full Git workflows: feature branches for isolation, pull requests for code review, and meaningful commit messages for history. Claude can help manage these workflows conversationally, making version control more accessible.
 
-*Note: If you deploy your project with platforms like Vercel, pushing changes to your repository will automatically trigger a new deployment, making your updates live without any manual steps.*
+*Note: If you deploy your project with platforms like Vercel, pushing changes to your repo will automatically trigger a new deployment, making your updates live without any manual steps.*
 
 ---
 
