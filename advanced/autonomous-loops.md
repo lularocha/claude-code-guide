@@ -9,9 +9,9 @@
   </iframe>
 </div>
 
-**Don't use Anthropic's plugin version, use the original Geoffrey Huntley vision**
-
 ---
+
+_Note: Don't use Anthropic's plugin version, use the original Geoffrey Huntley vision_
 
 ## What It Is
 
