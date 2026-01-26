@@ -1,5 +1,13 @@
 # Advanced Techniques
 
+## Use Git Workflows
+
+Beyond basic commits, leverage full Git workflows: feature branches for isolation, pull requests for code review, and meaningful commit messages for history. Claude can help manage these workflows conversationally, making version control more accessible.
+
+*Note: If you deploy your project with platforms like Vercel, pushing changes to your repo will automatically trigger a new deployment, making your updates live without any manual steps.*
+
+---
+
 ## Create Slash Commands
 
 Slash commands automate repetitive tasks and save significant time. Ask Claude to help you create them:
@@ -10,14 +18,6 @@ Slash commands automate repetitive tasks and save significant time. Ask Claude t
 Commands can be global or project-specific depending on your needs.
 
 _Note: Slash Commands have been merged with Skills. [Check Thariq's post on X](https://x.com/trq212/status/2014836841846132761?s=46&t=xXOubYP77x-93VPw93nVnA)._
-
----
-
-## Use Git Workflows
-
-Beyond basic commits, leverage full Git workflows: feature branches for isolation, pull requests for code review, and meaningful commit messages for history. Claude can help manage these workflows conversationally, making version control more accessible.
-
-*Note: If you deploy your project with platforms like Vercel, pushing changes to your repo will automatically trigger a new deployment, making your updates live without any manual steps.*
 
 ---
 
