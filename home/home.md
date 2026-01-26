@@ -26,10 +26,9 @@ It's my feedback learning loop: study, practice, learn, document, improve.**
 
 ## Reference
 
-- **[Glossary](../reference/glossary.md)** — Claude Code terminology
+- **[People to Follow](../reference/people.md)** — Claude Code creators and educators
 - **[Resources](../reference/resources.md)** — Official docs and community content
 - **[Prompts](../reference/prompts.md)** — General prompting best practices
-- **[People to Follow](../reference/people.md)** — Claude Code creators and educators
 
 ---
 
