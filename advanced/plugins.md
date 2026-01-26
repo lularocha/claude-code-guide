@@ -1,4 +1,4 @@
-# Claude Code Plugins Guide
+# Plugins
 
 ## What Are Claude Code Plugins?
 

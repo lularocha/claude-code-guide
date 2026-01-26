@@ -1,644 +1,408 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Claude Code Guide</title>
-    <link rel="icon" type="image/png" href="viewer/images/favicon-cg.png">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/marked@11.1.1/marked.min.js"></script>
-    <style>
-        /* ============================================
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Claude Code Guide</title>
+        <link rel="icon" type="image/png" href="viewer/images/favicon-cg.png" />
+        <link
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <script src="https://cdn.jsdelivr.net/npm/marked@11.1.1/marked.min.js"></script>
+        <style>
+            /* ============================================
            BASE STYLES (Shared by both mobile and desktop)
            ============================================ */
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
 
-        body {
-            font-family: 'Inter', -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
+            body {
+                font-family:
+                    "Inter",
+                    -apple-system,
+                    system-ui,
+                    BlinkMacSystemFont,
+                    "Segoe UI",
+                    Roboto,
+                    "Helvetica Neue",
+                    Arial,
+                    sans-serif;
+                line-height: 1.6;
+                color: #333;
+            }
 
-        strong {
-            font-weight: 600;
-        }
+            strong {
+                font-weight: 600;
+            }
 
-        /* Main Layout */
-        .container {
-            display: flex;
-            height: 100vh;
-        }
+            /* Main Layout */
+            .container {
+                display: flex;
+                height: 100vh;
+            }
 
-        /* Content Area - Base Styles */
-        .content {
-            flex: 1;
-            overflow-y: auto;
-            background: #fff;
-            font-optical-sizing: auto;
-            display: flex;
-            flex-direction: column;
-        }
+            /* Content Area - Base Styles */
+            .content {
+                flex: 1;
+                overflow-y: auto;
+                background: #fff;
+                font-optical-sizing: auto;
+                display: flex;
+                flex-direction: column;
+            }
 
-        /* Markdown Content - Base Styles */
-        .markdown-content {
-            flex: 1;
-        }
+            /* Markdown Content - Base Styles */
+            .markdown-content {
+                flex: 1;
+            }
 
-        /* Markdown Styling - Shared */
-        .content h1 {
-            line-height: 1.15;
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid #e1e4e8;
-        }
+            /* Markdown Styling - Shared */
+            .content h1 {
+                line-height: 1.15;
+                margin-bottom: 1rem;
+                padding-bottom: 0.5rem;
+                border-bottom: 1px solid #e1e4e8;
+            }
 
-        .content h2 {
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-        }
+            .content h2 {
+                margin-top: 2rem;
+                margin-bottom: 1rem;
+            }
 
-        .content h3 {
-            margin-top: 1.5rem;
-            margin-bottom: 0.75rem;
-        }
+            .content h3 {
+                margin-top: 1.5rem;
+                margin-bottom: 0.75rem;
+            }
 
-        .content h4 {
-            font-size: 1.1rem;
-            margin-top: 1rem;
-            margin-bottom: 0.5rem;
-        }
+            .content h4 {
+                font-size: 1.1rem;
+                margin-top: 1rem;
+                margin-bottom: 0.5rem;
+            }
 
-        /* People names in orange for AI People page */
-        .content.people-page h3 {
-            color: #f60;
-        }
+            /* People names in orange for AI People page */
+            .content.people-page h3 {
+                color: #f60;
+            }
 
-        /* Examples page - tighter h2 spacing */
-        .content.examples-page h2 {
-            margin-bottom: 0;
-        }
+            /* Examples page - tighter h2 spacing */
+            .content.examples-page h2 {
+                margin-bottom: 0;
+            }
 
-        .content p {
-            margin-bottom: 1rem;
-        }
+            .content p {
+                margin-bottom: 1rem;
+            }
 
-        .content ul, .content ol {
-            margin-bottom: 1rem;
-            margin-left: 2rem;
-        }
+            .content ul,
+            .content ol {
+                margin-bottom: 1rem;
+                margin-left: 2rem;
+            }
 
-        .content ul li::marker {
-            color: #f90;
-        }
+            .content ul li::marker {
+                color: #f90;
+            }
 
-        .content li {
-            margin-bottom: 0.5rem;
-        }
+            .content li {
+                margin-bottom: 0.5rem;
+            }
 
-        .content a {
-            color: #0366d6;
-            text-decoration: none;
-        }
+            .content a {
+                color: #0366d6;
+                text-decoration: none;
+            }
 
-        .content a:hover {
-            text-decoration: underline;
-        }
+            .content a:hover {
+                text-decoration: underline;
+            }
 
-        .content code {
-            background: #ddecfb;
-            padding: 0.2rem 0.4rem;
-            border-radius: 3px;
-            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
-            font-size: 0.9em;
-        }
+            .content code {
+                background: #ddecfb;
+                padding: 0.2rem 0.4rem;
+                border-radius: 3px;
+                font-family:
+                    "SFMono-Regular", Consolas, "Liberation Mono", Menlo,
+                    monospace;
+                font-size: 0.9em;
+            }
 
-        .content pre {
-            background: #f6f8fa;
-            padding: 1rem;
-            border-radius: 6px;
-            overflow-x: auto;
-            margin-bottom: 1rem;
-        }
+            .content pre {
+                background: #f6f8fa;
+                padding: 1rem;
+                border-radius: 6px;
+                overflow-x: auto;
+                margin-bottom: 1rem;
+            }
 
-        .content pre code {
-            background: none;
-            padding: 0;
-        }
+            .content pre code {
+                background: none;
+                padding: 0;
+            }
 
-        .content blockquote {
-            border-left: 4px solid #fc0;
-            padding-left: 1rem;
-            margin: 1rem 0;
-            color: #667;
-        }
+            .content blockquote {
+                border-left: 4px solid #fc0;
+                padding-left: 1rem;
+                margin: 1rem 0;
+                color: #667;
+            }
 
-        .content hr {
-            border: none;
-            border-top: 1px solid #e1e4e8;
-            margin: 2rem 0;
-        }
+            .content hr {
+                border: none;
+                border-top: 1px solid #e1e4e8;
+                margin: 2rem 0;
+            }
 
-        /* Loading State */
-        .loading {
-            color: #6a737d;
-            font-style: italic;
-        }
+            /* Loading State */
+            .loading {
+                color: #6a737d;
+                font-style: italic;
+            }
 
-        /* Empty State */
-        .empty-state {
-            color: #6a737d;
-            text-align: center;
-            padding: 3rem;
-        }
+            /* Empty State */
+            .empty-state {
+                color: #6a737d;
+                text-align: center;
+                padding: 3rem;
+            }
 
-        /* Hide Google Translate banner */
-        .goog-te-banner-frame {
-            display: none !important;
-        }
-        body.translated-ltr, body.translated-rtl {
-            top: 0 !important;
-        }
+            /* Hide Google Translate banner */
+            .goog-te-banner-frame {
+                display: none !important;
+            }
+            body.translated-ltr,
+            body.translated-rtl {
+                top: 0 !important;
+            }
 
-        /* Last Updated Text */
-        .content .last-updated {
-            color: #f60;
-            font-size: 0.9rem;
-            margin-top: -0.5rem;
-            display: block;
-        }
+            /* Last Updated Text */
+            .content .last-updated {
+                color: #f60;
+                font-size: 0.9rem;
+                margin-top: -0.5rem;
+                display: block;
+            }
 
-        /* External Link Icon */
-        .external-link-icon {
-            font-size: 0.85em;
-            margin-left: 5px;
-            vertical-align: middle;
-            opacity: 0.7;
-        }
+            /* External Link Icon */
+            .external-link-icon {
+                font-size: 0.85em;
+                margin-left: 5px;
+                vertical-align: middle;
+                opacity: 0.7;
+            }
 
-        /* Footer - Base Styles */
-        footer {
-            padding: 1.75rem 1.5rem 2.5rem 1.75rem;
-            border-top: 3px solid #eee;
-            border-bottom: 0.5rem solid white;
-        }
+            /* Footer - Base Styles */
+            footer {
+                padding: 1.75rem 1.5rem 2.5rem 1.75rem;
+                border-top: 3px solid #eee;
+                border-bottom: 0.5rem solid white;
+            }
 
-        footer .footer-title {
-            font-weight: 600;
-            font-size: 1rem;
-        }
+            footer .footer-title {
+                font-weight: 600;
+                font-size: 1rem;
+            }
 
-        footer .footer-description {
-            font-size: 0.9rem;
-            color: #666;
-            line-height: 1.5;
-        }
+            footer .footer-description {
+                font-size: 0.9rem;
+                color: #666;
+                line-height: 1.5;
+            }
 
-        /* Scroll to Top Button - Shared */
-        #scroll-to-top {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 50px;
-            height: 50px;
-            background: #f80;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-            transition: opacity 0.3s ease, bottom 0.3s ease;
-        }
+            /* Scroll to Top Button - Shared */
+            #scroll-to-top {
+                position: fixed;
+                bottom: 2rem;
+                right: 2rem;
+                width: 50px;
+                height: 50px;
+                background: #f80;
+                border: none;
+                border-radius: 50%;
+                cursor: pointer;
+                display: none;
+                align-items: center;
+                justify-content: center;
+                z-index: 1000;
+                transition:
+                    opacity 0.3s ease,
+                    bottom 0.3s ease;
+            }
 
-        #scroll-to-top.visible {
-            display: flex;
-        }
+            #scroll-to-top.visible {
+                display: flex;
+            }
 
-        #scroll-to-top:hover {
-            background: #f60;
-        }
+            #scroll-to-top:hover {
+                background: #f60;
+            }
 
-        #scroll-to-top .material-icons {
-            color: #fff;
-            font-size: 24px;
-        }
+            #scroll-to-top .material-icons {
+                color: #fff;
+                font-size: 24px;
+            }
 
-
-        /* ============================================
+            /* ============================================
            DESKTOP STYLES (Default layout for screens > 1024px)
            ============================================ */
-        @media (min-width: 1025px) {
-            body {
-                border-top: 0.75rem solid #fe0;
-                overflow-y: clip;
-            }
-        }
-
-        /* Google Translate Widget - Desktop */
-        #google_translate_element {
-            position: fixed;
-            top: 1rem;
-            right: 1rem;
-            z-index: 100;
-            display: none; /* Temporarily hidden */
-        }
-
-        /* Header - Hidden on desktop */
-        header {
-            display: none;
-        }
-
-        /* Hamburger Button - Hidden on desktop */
-        #hamburger-btn {
-            display: none;
-        }
-
-        /* Desktop Sidebar */
-        .sidebar {
-            width: 300px;
-            background: #f4f4f4;
-            overflow-y: auto;
-            padding: 1rem;
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* Sidebar Header/Branding */
-        .sidebar-header {
-            padding: 1rem 0.75rem 0.5rem 0;
-            margin-left: 0.75rem;
-            margin-bottom: 1rem;
-            cursor: pointer;
-        }
-
-        .sidebar-header a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .sidebar-header h1 {
-            font-size: 2rem;
-            font-weight: 700;
-            line-height: 1.15;
-            color: #000;
-            letter-spacing: -0.5px;
-            padding-bottom: 0.25rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .sidebar-header h2 {
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: #000;
-        }
-
-        /* Sidebar Navigation */
-        .sidebar-nav {
-            flex: 1;
-        }
-
-        .nav-section {
-            margin-bottom: 0.5rem;
-        }
-
-        .nav-section-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0.5rem 0.75rem 0.5rem 0;
-            margin-left: 0.75rem;
-            font-size: 1rem;
-            font-weight: 600;
-            color: #000;
-            user-select: none;
-            border-top: 1px solid #ddd;
-        }
-
-        .nav-section-header:hover {
-            background: transparent;
-        }
-
-        .nav-section-header.expanded {
-            background: transparent;
-        }
-
-        .nav-section:first-child .nav-section-header {
-            border-top: none;
-        }
-
-        .nav-section-header::after {
-            content: '▶';
-            font-size: 0.7rem;
-            transition: transform 0.2s ease;
-            /* Hidden - sections always expanded. To re-enable collapse, remove display:none */
-            display: none;
-        }
-
-        .nav-section-header.expanded::after {
-            transform: rotate(90deg);
-        }
-
-        .nav-section-items {
-            /* Always expanded - to re-enable collapse, restore max-height:0 and overflow:hidden */
-            max-height: none;
-            overflow: visible;
-            transition: max-height 0.3s ease;
-            padding-left: 0.5rem;
-        }
-
-        .nav-section-items.expanded {
-            max-height: 500px;
-        }
-
-        .nav-section-item {
-            color: #667;
-            text-decoration: none;
-            display: block;
-            padding: 0.35rem 0.5rem 0.35rem 1rem;
-            border-radius: 4px;
-            transition: all 0.2s;
-            font-size: 0.9rem;
-            cursor: pointer;
-        }
-
-        .nav-section-item:hover {
-            background: #fff;
-            color: #000;
-        }
-
-        .nav-section-item.active {
-            color: #000;
-            font-weight: 600;
-            position: relative;
-        }
-
-        .nav-section-item.active::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: #000;
-            font-size: 1.2rem;
-            line-height: 1.6;
-            margin-top: -4px;
-        }
-
-        /* Desktop Content Area */
-        .content {
-            max-width: 900px;
-            /* Hide scrollbar but keep scroll functionality - desktop only */
-            scrollbar-width: none; /* Firefox */
-            -ms-overflow-style: none; /* IE/Edge */
-        }
-
-        .content::-webkit-scrollbar {
-            display: none; /* Chrome, Safari, Opera */
-        }
-
-        /* Desktop Markdown Content */
-        .markdown-content {
-            padding: 2rem 5rem 3rem 6rem;
-        }
-
-        /* Desktop Typography */
-        .content h1 {
-            font-size: 2.5rem;
-            padding-bottom: 1rem;
-        }
-
-        .content h2 {
-            font-size: 1.75rem;
-        }
-
-        .content h3 {
-            font-size: 1.25rem;
-        }
-
-
-        /* ============================================
-           MOBILE STYLES (Screens ≤ 1024px)
-           ============================================ */
-
-        @media (max-width: 1024px) {
-            /* Mobile Body */
-            body {
-                border-top: none;
+            @media (min-width: 1025px) {
+                body {
+                    border-top: 0.75rem solid #fe0;
+                    overflow-y: clip;
+                }
             }
 
-            /* Mobile Header - Visible on mobile */
-            header {
-                display: block;
-                background: #fe0;
-                padding: 1rem;
-                position: sticky;
-                top: 0;
+            /* Google Translate Widget - Desktop */
+            #google_translate_element {
+                position: fixed;
+                top: 1rem;
+                right: 1rem;
                 z-index: 100;
+                display: none; /* Temporarily hidden */
+            }
+
+            /* Header - Hidden on desktop */
+            header {
+                display: none;
+            }
+
+            /* Hamburger Button - Hidden on desktop */
+            #hamburger-btn {
+                display: none;
+            }
+
+            /* Desktop Sidebar */
+            .sidebar {
+                width: 300px;
+                background: #f4f4f4;
+                overflow-y: auto;
+                padding: 1rem;
+                display: flex;
+                flex-direction: column;
+            }
+
+            /* Sidebar Header/Branding */
+            .sidebar-header {
+                padding: 1rem 0.75rem 0.5rem 0;
+                margin-left: 0.75rem;
+                margin-bottom: 1rem;
                 cursor: pointer;
             }
 
-            header a {
+            .sidebar-header a {
                 text-decoration: none;
                 color: inherit;
             }
 
-            .header-content {
-                display: block;
-            }
-
-            header h1 {
+            .sidebar-header h1 {
                 font-size: 2rem;
                 font-weight: 700;
+                line-height: 1.15;
                 color: #000;
                 letter-spacing: -0.5px;
-                line-height: 1.15;
+                padding-bottom: 0.25rem;
+                margin-bottom: 0.25rem;
             }
 
-            header h2 {
-                font-size: 1rem;
+            .sidebar-header h2 {
+                font-size: 0.85rem;
                 font-weight: 500;
-                padding-top: 0.25rem;
+                color: #000;
             }
 
-            /* Hamburger Button - Visible on mobile */
-            #hamburger-btn {
-                display: flex;
-                position: fixed;
-                top: 0.7rem;
-                right: 1rem;
-                z-index: 1000;
-                width: 44px;
-                height: 44px;
-                background: none;
-                border: none;
-                cursor: pointer;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                gap: 5px;
-                padding: 0;
+            /* Sidebar Navigation */
+            .sidebar-nav {
+                flex: 1;
             }
 
-            #hamburger-btn span {
-                display: block;
-                width: 24px;
-                height: 3px;
-                background: #333;
-                transition: all 0.3s ease;
-                transform-origin: center;
-            }
-
-            /* Hide hamburger when menu is open (close button is inside panel) */
-            #hamburger-btn.open {
-                display: none;
-            }
-
-            /* Hide desktop sidebar on mobile */
-            .sidebar {
-                display: none;
-            }
-
-            /* Mobile Navigation Overlay */
-            #mobile-nav-overlay {
-                display: none;
-                position: fixed;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                z-index: 999;
-                background: rgba(0, 0, 0, 0.5);
-                opacity: 0;
-                transition: opacity 300ms ease-out;
-            }
-
-            #mobile-nav-overlay.open {
-                opacity: 1;
-                display: block;
-            }
-
-            #mobile-nav-panel {
-                position: fixed;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                width: 300px;
-                max-width: 80%;
-                background: #fe0;
-                box-shadow: -2px 0 8px rgba(0,0,0,0.2);
-                transform: translateX(100%);
-                transition: transform 300ms ease-out;
-                overflow-y: auto;
-                padding: 1rem;
-            }
-
-            #mobile-nav-overlay.open #mobile-nav-panel {
-                transform: translateX(0);
-            }
-
-            #mobile-close-btn {
-                position: absolute;
-                top: 0.5rem;
-                right: 1rem;
-                width: 44px;
-                height: 44px;
-                background: none;
-                border: none;
-                font-size: 2rem;
-                color: #333;
-                cursor: pointer;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                line-height: 1;
-            }
-
-            #mobile-nav-content {
-                margin-top: 3rem;
-            }
-
-            .mobile-section {
+            .nav-section {
                 margin-bottom: 0.5rem;
-                background: transparent;
             }
 
-            /* Active state: whole section has #ff0 */
-            .mobile-section.active {
-                background: #ff0;
-            }
-
-            /* Expanded state (not active): whole section has #ff0 */
-            .mobile-section:has(.mobile-section-header.expanded):not(.active) {
-                background: #fd0;
-            }
-
-            .mobile-section-header {
+            .nav-section-header {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                padding: 0.75rem 1rem;
-                background: transparent;
-                border: none;
+                padding: 0.5rem 0.75rem 0.5rem 0;
+                margin-left: 0.75rem;
                 font-size: 1rem;
                 font-weight: 600;
-                color: #333;
-                cursor: pointer;
-                width: 100%;
-                text-align: left;
-                transition: background-color 0.2s;
-            }
-
-            .mobile-section-header.active {
                 color: #000;
+                user-select: none;
+                border-top: 1px solid #ddd;
             }
 
-            .mobile-section-header::after {
-                content: '▶';
-                font-size: 0.75rem;
-                transition: transform 0.3s ease;
+            .nav-section-header:hover {
+                background: transparent;
             }
 
-            .mobile-section-header.expanded::after {
+            .nav-section-header.expanded {
+                background: transparent;
+            }
+
+            .nav-section:first-child .nav-section-header {
+                border-top: none;
+            }
+
+            .nav-section-header::after {
+                content: "▶";
+                font-size: 0.7rem;
+                transition: transform 0.2s ease;
+                /* Hidden - sections always expanded. To re-enable collapse, remove display:none */
+                display: none;
+            }
+
+            .nav-section-header.expanded::after {
                 transform: rotate(90deg);
             }
 
-            .mobile-submenu {
-                max-height: 0;
-                overflow: hidden;
+            .nav-section-items {
+                /* Always expanded - to re-enable collapse, restore max-height:0 and overflow:hidden */
+                max-height: none;
+                overflow: visible;
                 transition: max-height 0.3s ease;
-                padding-left: 1rem;
+                padding-left: 0.5rem;
             }
 
-            .mobile-submenu.expanded {
+            .nav-section-items.expanded {
                 max-height: 500px;
             }
 
-            .mobile-submenu-item {
-                display: block;
-                padding: 0.5rem 1rem;
-                color: #333;
+            .nav-section-item {
+                color: #667;
                 text-decoration: none;
-                transition: background-color 0.2s;
+                display: block;
+                padding: 0.35rem 0.5rem 0.35rem 1rem;
+                border-radius: 4px;
+                transition: all 0.2s;
+                font-size: 0.9rem;
                 cursor: pointer;
-                margin-top: 0.25rem;
-                background: transparent;
             }
 
-            .mobile-submenu-item.active {
+            .nav-section-item:hover {
+                background: #fff;
+                color: #000;
+            }
+
+            .nav-section-item.active {
                 color: #000;
                 font-weight: 600;
                 position: relative;
             }
 
-            .mobile-submenu-item.active::before {
-                content: '•';
+            .nav-section-item.active::before {
+                content: "•";
                 position: absolute;
                 left: 0;
                 color: #000;
@@ -647,745 +411,1113 @@
                 margin-top: -4px;
             }
 
-            /* Body scroll lock when mobile menu is open */
-            body.menu-open {
-                overflow: hidden;
-            }
-
-            /* Mobile Layout */
-            .container {
-                flex-direction: column;
-                height: 100vh;
-            }
-
-            /* Mobile Content Area */
+            /* Desktop Content Area */
             .content {
-                width: 100%;
-                max-width: none;
-                overflow-y: auto;
-                /* Show scrollbar on mobile */
-                scrollbar-width: auto;
-                -ms-overflow-style: auto;
+                max-width: 900px;
+                /* Hide scrollbar but keep scroll functionality - desktop only */
+                scrollbar-width: none; /* Firefox */
+                -ms-overflow-style: none; /* IE/Edge */
             }
 
             .content::-webkit-scrollbar {
-                display: block;
+                display: none; /* Chrome, Safari, Opera */
             }
 
-            /* Mobile Markdown Content */
+            /* Desktop Markdown Content */
             .markdown-content {
-                padding: 1rem;
+                padding: 2rem 5rem 3rem 6rem;
             }
 
-            /* Mobile Typography */
+            /* Desktop Typography */
             .content h1 {
-                font-size: 1.75rem;
-                padding-top: 1rem;
-                font-weight: 800;
+                font-size: 2.5rem;
+                padding-bottom: 1rem;
             }
 
             .content h2 {
-                font-size: 1.25rem;
-                font-weight: 800;
+                font-size: 1.75rem;
             }
 
             .content h3 {
-                font-size: 1.1rem;
-                font-weight: 800;
+                font-size: 1.25rem;
             }
 
-            .content h4,
-            .content h5,
-            .content h6 {
-                font-weight: 800;
+            /* ============================================
+           MOBILE STYLES (Screens ≤ 1024px)
+           ============================================ */
+
+            @media (max-width: 1024px) {
+                /* Mobile Body */
+                body {
+                    border-top: none;
+                }
+
+                /* Mobile Header - Visible on mobile */
+                header {
+                    display: block;
+                    background: #fe0;
+                    padding: 1rem;
+                    position: sticky;
+                    top: 0;
+                    z-index: 100;
+                    cursor: pointer;
+                }
+
+                header a {
+                    text-decoration: none;
+                    color: inherit;
+                }
+
+                .header-content {
+                    display: block;
+                }
+
+                header h1 {
+                    font-size: 2rem;
+                    font-weight: 800;
+                    color: #000;
+                    letter-spacing: -0.5px;
+                    line-height: 1.15;
+                }
+
+                header h2 {
+                    font-size: 1rem;
+                    font-weight: 500;
+                    padding-top: 0.25rem;
+                }
+
+                /* Hamburger Button - Visible on mobile */
+                #hamburger-btn {
+                    display: flex;
+                    position: fixed;
+                    top: 0.7rem;
+                    right: 1rem;
+                    z-index: 1000;
+                    width: 44px;
+                    height: 44px;
+                    background: none;
+                    border: none;
+                    cursor: pointer;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 5px;
+                    padding: 0;
+                }
+
+                #hamburger-btn span {
+                    display: block;
+                    width: 24px;
+                    height: 3px;
+                    background: #333;
+                    transition: all 0.3s ease;
+                    transform-origin: center;
+                }
+
+                /* Hide hamburger when menu is open (close button is inside panel) */
+                #hamburger-btn.open {
+                    display: none;
+                }
+
+                /* Hide desktop sidebar on mobile */
+                .sidebar {
+                    display: none;
+                }
+
+                /* Mobile Navigation Overlay */
+                #mobile-nav-overlay {
+                    display: none;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    z-index: 999;
+                    background: rgba(0, 0, 0, 0.5);
+                    opacity: 0;
+                    transition: opacity 300ms ease-out;
+                }
+
+                #mobile-nav-overlay.open {
+                    opacity: 1;
+                    display: block;
+                }
+
+                #mobile-nav-panel {
+                    position: fixed;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    width: 300px;
+                    max-width: 80%;
+                    background: #fe0;
+                    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
+                    transform: translateX(100%);
+                    transition: transform 300ms ease-out;
+                    overflow-y: auto;
+                    padding: 1rem;
+                }
+
+                #mobile-nav-overlay.open #mobile-nav-panel {
+                    transform: translateX(0);
+                }
+
+                #mobile-close-btn {
+                    position: absolute;
+                    top: 0.5rem;
+                    right: 1rem;
+                    width: 44px;
+                    height: 44px;
+                    background: none;
+                    border: none;
+                    font-size: 2rem;
+                    color: #333;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    line-height: 1;
+                }
+
+                #mobile-nav-content {
+                    margin-top: 3rem;
+                }
+
+                .mobile-section {
+                    margin-bottom: 0.5rem;
+                    background: transparent;
+                }
+
+                /* Active state: whole section has #ff0 */
+                .mobile-section.active {
+                    background: #ff0;
+                }
+
+                /* Expanded state (not active): whole section has #ff0 */
+                .mobile-section:has(.mobile-section-header.expanded):not(
+                        .active
+                    ) {
+                    background: #fd0;
+                }
+
+                .mobile-section-header {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 0.75rem 1rem;
+                    background: transparent;
+                    border: none;
+                    font-size: 1rem;
+                    font-weight: 600;
+                    color: #333;
+                    cursor: pointer;
+                    width: 100%;
+                    text-align: left;
+                    transition: background-color 0.2s;
+                }
+
+                .mobile-section-header.active {
+                    color: #000;
+                }
+
+                .mobile-section-header::after {
+                    content: "▶";
+                    font-size: 0.75rem;
+                    transition: transform 0.3s ease;
+                }
+
+                .mobile-section-header.expanded::after {
+                    transform: rotate(90deg);
+                }
+
+                .mobile-submenu {
+                    max-height: 0;
+                    overflow: hidden;
+                    transition: max-height 0.3s ease;
+                    padding-left: 1rem;
+                }
+
+                .mobile-submenu.expanded {
+                    max-height: 500px;
+                }
+
+                .mobile-submenu-item {
+                    display: block;
+                    padding: 0.5rem 1rem;
+                    color: #333;
+                    text-decoration: none;
+                    transition: background-color 0.2s;
+                    cursor: pointer;
+                    margin-top: 0.25rem;
+                    background: transparent;
+                }
+
+                .mobile-submenu-item.active {
+                    color: #000;
+                    font-weight: 600;
+                    position: relative;
+                }
+
+                .mobile-submenu-item.active::before {
+                    content: "•";
+                    position: absolute;
+                    left: 0;
+                    color: #000;
+                    font-size: 1.2rem;
+                    line-height: 1.6;
+                    margin-top: -4px;
+                }
+
+                /* Body scroll lock when mobile menu is open */
+                body.menu-open {
+                    overflow: hidden;
+                }
+
+                /* Mobile Layout */
+                .container {
+                    flex-direction: column;
+                    height: 100vh;
+                }
+
+                /* Mobile Content Area */
+                .content {
+                    width: 100%;
+                    max-width: none;
+                    overflow-y: auto;
+                    /* Show scrollbar on mobile */
+                    scrollbar-width: auto;
+                    -ms-overflow-style: auto;
+                }
+
+                .content::-webkit-scrollbar {
+                    display: block;
+                }
+
+                /* Mobile Markdown Content */
+                .markdown-content {
+                    padding: 1rem;
+                }
+
+                /* Mobile Typography */
+                .content h1 {
+                    font-size: 1.75rem;
+                    padding-top: 1rem;
+                    font-weight: 800;
+                }
+
+                .content h2 {
+                    font-size: 1.25rem;
+                    font-weight: 800;
+                }
+
+                .content h3 {
+                    font-size: 1.1rem;
+                    font-weight: 800;
+                }
+
+                .content h4,
+                .content h5,
+                .content h6 {
+                    font-weight: 800;
+                }
+
+                /* Mobile Code Blocks */
+                .content pre {
+                    overflow-x: auto;
+                    max-width: 100%;
+                }
+
+                /* Mobile Images */
+                .content img {
+                    max-width: 100%;
+                    height: auto;
+                }
+
+                #scroll-to-top:hover {
+                    background: #f80;
+                }
+
+                /* Mobile Footer */
+                footer {
+                    text-align: left;
+                    padding: 1.75rem 1rem;
+                }
+
+                /* Google Translate Widget - Temporarily hidden on mobile */
+                #google_translate_element {
+                    display: none !important;
+                }
+
+                /* Google Translate Widget - Show when inside mobile panel */
+                #mobile-nav-panel #google_translate_element {
+                    display: none !important; /* Temporarily hidden */
+                    position: static;
+                    padding: 1rem;
+                    margin-top: 1rem;
+                    border-top: 1px solid #cc0;
+                }
             }
 
-            /* Mobile Code Blocks */
-            .content pre {
-                overflow-x: auto;
-                max-width: 100%;
-            }
-
-            /* Mobile Images */
-            .content img {
-                max-width: 100%;
-                height: auto;
-            }
-
-            #scroll-to-top:hover {
-                background: #f80;
-            }
-
-            /* Mobile Footer */
-            footer {
-                text-align: left;
-                padding: 1.75rem 1rem;
-
-            }
-
-            /* Google Translate Widget - Temporarily hidden on mobile */
-            #google_translate_element {
-                display: none !important;
-            }
-
-            /* Google Translate Widget - Show when inside mobile panel */
-            #mobile-nav-panel #google_translate_element {
-                display: none !important; /* Temporarily hidden */
-                position: static;
-                padding: 1rem;
-                margin-top: 1rem;
-                border-top: 1px solid #cc0;
-            }
-        }
-
-
-        /* ============================================
+            /* ============================================
            MOBILE-ONLY ELEMENTS (Not shown on desktop)
            ============================================ */
 
-        /* Mobile Navigation Overlay - Hidden by default, shown within mobile breakpoint */
-        #mobile-nav-overlay {
-            display: none;
-        }
-    </style>
-</head>
-<body>
-    <!-- Mobile Header -->
-    <header>
-        <a href="#home/home.md">
-            <div class="header-content">
-                <h1><span class="h1cc">Claude Code</span> <span class="h1bp">Guide</span></h1>
+            /* Mobile Navigation Overlay - Hidden by default, shown within mobile breakpoint */
+            #mobile-nav-overlay {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Mobile Header -->
+        <header>
+            <a href="#home/home.md">
+                <div class="header-content">
+                    <h1>
+                        <span class="h1cc">Claude Code</span>
+                        <span class="h1bp">Guide</span>
+                    </h1>
+                </div>
+                <h2>Lula Rocha + Claude</h2>
+            </a>
+        </header>
+
+        <!-- Hamburger Button for Mobile -->
+        <button id="hamburger-btn" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Mobile Navigation Overlay -->
+        <div id="mobile-nav-overlay">
+            <div id="mobile-nav-panel">
+                <button id="mobile-close-btn" aria-label="Close menu">
+                    &times;
+                </button>
+                <nav id="mobile-nav-content">
+                    <!-- Will be populated dynamically by JavaScript -->
+                </nav>
             </div>
-            <h2>Lula Rocha + Claude</h2>
-        </a>
-    </header>
-
-    <!-- Hamburger Button for Mobile -->
-    <button id="hamburger-btn" aria-label="Open menu">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
-
-    <!-- Mobile Navigation Overlay -->
-    <div id="mobile-nav-overlay">
-        <div id="mobile-nav-panel">
-            <button id="mobile-close-btn" aria-label="Close menu">&times;</button>
-            <nav id="mobile-nav-content">
-                <!-- Will be populated dynamically by JavaScript -->
-            </nav>
         </div>
-    </div>
 
-    <!-- Scroll to Top Button -->
-    <button id="scroll-to-top" aria-label="Scroll to top">
-        <span class="material-icons">arrow_upward</span>
-    </button>
+        <!-- Scroll to Top Button -->
+        <button id="scroll-to-top" aria-label="Scroll to top">
+            <span class="material-icons">arrow_upward</span>
+        </button>
 
-    <!-- Google Translate Widget - Desktop -->
-    <div id="google_translate_element"></div>
+        <!-- Google Translate Widget - Desktop -->
+        <div id="google_translate_element"></div>
 
-    <div class="container">
-        <aside class="sidebar">
-            <div class="sidebar-header">
-                <a href="#home/home.md">
-                    <h1><span class="h1cc">Claude Code</span><br><span class="h1bp">Guide</span></h1>
-                    <h2>Lula Rocha + Claude</h2>
-                </a>
-            </div>
-            <nav class="sidebar-nav" id="sidebar-nav">
-                <!-- Will be populated dynamically by JavaScript -->
-            </nav>
-        </aside>
+        <div class="container">
+            <aside class="sidebar">
+                <div class="sidebar-header">
+                    <a href="#home/home.md">
+                        <h1>
+                            <span class="h1cc">Claude Code</span><br /><span
+                                class="h1bp"
+                                >Guide</span
+                            >
+                        </h1>
+                        <h2>Lula Rocha + Claude</h2>
+                    </a>
+                </div>
+                <nav class="sidebar-nav" id="sidebar-nav">
+                    <!-- Will be populated dynamically by JavaScript -->
+                </nav>
+            </aside>
 
-        <main class="content" id="content">
-            <div class="markdown-content" id="markdown-content">
-                <div class="loading">Loading...</div>
-            </div>
-            <footer>
-                <div class="footer-title">Lula Rocha + Claude</div>
-                <div class="footer-description">This site documents my Claude Code journey, and it's built with Claude Code itself.<br>It's my feedback learning loop: study, practice, learn, document, improve.</div>
-            </footer>
-        </main>
-    </div>
+            <main class="content" id="content">
+                <div class="markdown-content" id="markdown-content">
+                    <div class="loading">Loading...</div>
+                </div>
+                <footer>
+                    <div class="footer-title">Lula Rocha + Claude</div>
+                    <div class="footer-description">
+                        This site documents my Claude Code journey, and it's
+                        built with Claude Code itself.<br />It's my feedback
+                        learning loop: study, practice, learn, document,
+                        improve.
+                    </div>
+                </footer>
+            </main>
+        </div>
 
-    <script>
-        // File structure mapping
-        const fileStructure = {
-            home: [
-                { name: 'Overview', path: 'home/home.md' }
-            ],
-            'getting-started': [
-                { name: 'Installation & Setup', path: 'https://code.claude.com/docs/en/quickstart', external: true },
-                { name: 'Talking to Claude', path: 'getting-started/talking-to-claude.md' }
-            ],
-            advanced: [
-                { name: 'Advanced Techniques', path: 'advanced/advanced-techniques.md' },
-                { name: 'CLAUDE.md', path: 'advanced/claude-md-guide.md' },
-                { name: 'Autonomous Loops', path: 'advanced/autonomous-loops.md' },
-                { name: 'Skills', path: 'advanced/skills.md' },
-                { name: 'Plugins', path: 'advanced/plugins.md' }
-            ],
-            reference: [
-                { name: 'Glossary', path: 'reference/glossary.md' },
-                { name: 'Resources', path: 'reference/resources.md' },
-                { name: 'Prompts', path: 'reference/prompts.md' },
-                { name: 'People', path: 'reference/people.md' }
-            ],
-            examples: [
-                { name: 'My Projects', path: 'examples/my-projects.md' }
-            ]
-        };
+        <script>
+            // File structure mapping
+            const fileStructure = {
+                home: [{ name: "Overview", path: "home/home.md" }],
+                "getting-started": [
+                    {
+                        name: "Installation & Setup",
+                        path: "https://code.claude.com/docs/en/quickstart",
+                        external: true,
+                    },
+                    {
+                        name: "Talking to Claude",
+                        path: "getting-started/talking-to-claude.md",
+                    },
+                ],
+                advanced: [
+                    {
+                        name: "Advanced Techniques",
+                        path: "advanced/advanced-techniques.md",
+                    },
+                    { name: "CLAUDE.md", path: "advanced/claude-md-guide.md" },
+                    {
+                        name: "Autonomous Loops",
+                        path: "advanced/autonomous-loops.md",
+                    },
+                    { name: "Skills", path: "advanced/skills.md" },
+                    { name: "Plugins", path: "advanced/plugins.md" },
+                ],
+                reference: [
+                    { name: "Glossary", path: "reference/glossary.md" },
+                    { name: "Resources", path: "reference/resources.md" },
+                    { name: "Prompts", path: "reference/prompts.md" },
+                    { name: "People", path: "reference/people.md" },
+                ],
+                examples: [
+                    { name: "My Projects", path: "examples/my-projects.md" },
+                ],
+            };
 
-        let currentCategory = 'home';
-        let currentFile = null;
+            let currentCategory = "home";
+            let currentFile = null;
 
-        // Helper function to convert category names to display names
-        function getCategoryDisplayName(category) {
-            return category
-                .split('-')
-                .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-                .join(' ');
-        }
-
-        // Initialize
-        document.addEventListener('DOMContentLoaded', () => {
-            renderSidebarNavigation();
-            setupMobileNavigation();
-
-            // Load from URL hash or default to home
-            if (!loadFromHash()) {
-                loadFile(fileStructure.home[0].path);
+            // Helper function to convert category names to display names
+            function getCategoryDisplayName(category) {
+                return category
+                    .split("-")
+                    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+                    .join(" ");
             }
 
-            // Handle browser back/forward
-            window.addEventListener('hashchange', () => {
-                loadFromHash();
-            });
-        });
+            // Initialize
+            document.addEventListener("DOMContentLoaded", () => {
+                renderSidebarNavigation();
+                setupMobileNavigation();
 
-        // Render sidebar navigation with all categories
-        function renderSidebarNavigation() {
-            const sidebarNav = document.getElementById('sidebar-nav');
-            sidebarNav.innerHTML = '';
+                // Load from URL hash or default to home
+                if (!loadFromHash()) {
+                    loadFile(fileStructure.home[0].path);
+                }
 
-            // Loop through each category
-            Object.keys(fileStructure).forEach((category, index) => {
-                const section = document.createElement('div');
-                section.className = 'nav-section';
-
-                // Create section header
-                const header = document.createElement('div');
-                header.className = 'nav-section-header';
-                header.textContent = getCategoryDisplayName(category);
-
-                // Always expanded - all sections start expanded
-                header.classList.add('expanded');
-
-                // Create items container
-                const itemsContainer = document.createElement('div');
-                itemsContainer.className = 'nav-section-items';
-
-                // Always expanded - all sections start expanded
-                itemsContainer.classList.add('expanded');
-
-                // Populate items
-                fileStructure[category].forEach(file => {
-                    const item = document.createElement('a');
-                    item.className = 'nav-section-item';
-                    item.dataset.path = file.path;
-
-                    if (file.external) {
-                        // External link - open in new tab
-                        item.href = file.path;
-                        item.target = '_blank';
-                        item.rel = 'noopener noreferrer';
-                        // Add text and external link icon
-                        item.appendChild(document.createTextNode(file.name));
-                        const icon = document.createElement('span');
-                        icon.className = 'material-icons external-link-icon';
-                        icon.textContent = 'open_in_new';
-                        item.appendChild(icon);
-                    } else {
-                        // Internal link - load via JavaScript
-                        item.textContent = file.name;
-                        item.href = '#' + file.path;
-                        item.addEventListener('click', (e) => {
-                            e.preventDefault();
-                            loadFile(file.path);
-                            updateSidebarActive(file.path);
-                            updateMobileMenuActive(category, file.path);
-                        });
-                    }
-
-                    itemsContainer.appendChild(item);
+                // Handle browser back/forward
+                window.addEventListener("hashchange", () => {
+                    loadFromHash();
                 });
+            });
 
-                // Toggle expand/collapse - DISABLED (sections always expanded)
-                // To re-enable: uncomment this event listener
-                /* header.addEventListener('click', () => {
+            // Render sidebar navigation with all categories
+            function renderSidebarNavigation() {
+                const sidebarNav = document.getElementById("sidebar-nav");
+                sidebarNav.innerHTML = "";
+
+                // Loop through each category
+                Object.keys(fileStructure).forEach((category, index) => {
+                    const section = document.createElement("div");
+                    section.className = "nav-section";
+
+                    // Create section header
+                    const header = document.createElement("div");
+                    header.className = "nav-section-header";
+                    header.textContent = getCategoryDisplayName(category);
+
+                    // Always expanded - all sections start expanded
+                    header.classList.add("expanded");
+
+                    // Create items container
+                    const itemsContainer = document.createElement("div");
+                    itemsContainer.className = "nav-section-items";
+
+                    // Always expanded - all sections start expanded
+                    itemsContainer.classList.add("expanded");
+
+                    // Populate items
+                    fileStructure[category].forEach((file) => {
+                        const item = document.createElement("a");
+                        item.className = "nav-section-item";
+                        item.dataset.path = file.path;
+
+                        if (file.external) {
+                            // External link - open in new tab
+                            item.href = file.path;
+                            item.target = "_blank";
+                            item.rel = "noopener noreferrer";
+                            // Add text and external link icon
+                            item.appendChild(
+                                document.createTextNode(file.name),
+                            );
+                            const icon = document.createElement("span");
+                            icon.className =
+                                "material-icons external-link-icon";
+                            icon.textContent = "open_in_new";
+                            item.appendChild(icon);
+                        } else {
+                            // Internal link - load via JavaScript
+                            item.textContent = file.name;
+                            item.href = "#" + file.path;
+                            item.addEventListener("click", (e) => {
+                                e.preventDefault();
+                                loadFile(file.path);
+                                updateSidebarActive(file.path);
+                                updateMobileMenuActive(category, file.path);
+                            });
+                        }
+
+                        itemsContainer.appendChild(item);
+                    });
+
+                    // Toggle expand/collapse - DISABLED (sections always expanded)
+                    // To re-enable: uncomment this event listener
+                    /* header.addEventListener('click', () => {
                     header.classList.toggle('expanded');
                     itemsContainer.classList.toggle('expanded');
                 }); */
 
-                section.appendChild(header);
-                section.appendChild(itemsContainer);
-                sidebarNav.appendChild(section);
-            });
-        }
-
-        // Parse URL hash and load the corresponding file
-        function loadFromHash() {
-            const hash = window.location.hash.slice(1); // Remove '#'
-            if (!hash) return false;
-
-            // Find which category contains this file
-            for (const [category, files] of Object.entries(fileStructure)) {
-                const file = files.find(f => f.path === hash);
-                if (file) {
-                    currentCategory = category;
-                    loadFile(file.path, false); // false = don't update hash again
-                    updateSidebarActive(file.path);
-                    updateMobileMenuActive(category, file.path);
-                    return true;
-                }
+                    section.appendChild(header);
+                    section.appendChild(itemsContainer);
+                    sidebarNav.appendChild(section);
+                });
             }
-            return false;
-        }
 
-        // Update sidebar active state
-        function updateSidebarActive(path) {
-            document.querySelectorAll('.nav-section-item').forEach(item => {
-                item.classList.toggle('active', item.dataset.path === path);
-            });
-        }
+            // Parse URL hash and load the corresponding file
+            function loadFromHash() {
+                const hash = window.location.hash.slice(1); // Remove '#'
+                if (!hash) return false;
 
-        // Update mobile menu active state
-        function updateMobileMenuActive(category, path) {
-            const categoryDisplayName = getCategoryDisplayName(category).toLowerCase();
-
-            document.querySelectorAll('.mobile-submenu-item').forEach(item => {
-                item.classList.toggle('active', item.dataset.path === path);
-            });
-            document.querySelectorAll('.mobile-section-header').forEach(header => {
-                const sectionCategory = header.textContent.toLowerCase();
-                const isActive = sectionCategory === categoryDisplayName;
-                header.classList.toggle('active', isActive);
-                // Expand active section, collapse others
-                if (isActive) {
-                    header.classList.add('expanded');
-                } else {
-                    header.classList.remove('expanded');
-                }
-            });
-            // Update active section (parent div) and expand submenu
-            document.querySelectorAll('.mobile-section').forEach(section => {
-                const sectionHeader = section.querySelector('.mobile-section-header');
-                const submenu = section.querySelector('.mobile-submenu');
-                const sectionCategory = sectionHeader ? sectionHeader.textContent.toLowerCase() : '';
-                const isActive = sectionCategory === categoryDisplayName;
-                section.classList.toggle('active', isActive);
-                // Expand active section's submenu, collapse others
-                if (submenu) {
-                    if (isActive) {
-                        submenu.classList.add('expanded');
-                    } else {
-                        submenu.classList.remove('expanded');
+                // Find which category contains this file
+                for (const [category, files] of Object.entries(fileStructure)) {
+                    const file = files.find((f) => f.path === hash);
+                    if (file) {
+                        currentCategory = category;
+                        loadFile(file.path, false); // false = don't update hash again
+                        updateSidebarActive(file.path);
+                        updateMobileMenuActive(category, file.path);
+                        return true;
                     }
                 }
-            });
-        }
-
-        // Load and render markdown file
-        async function loadFile(path, updateHash = true) {
-            const content = document.getElementById('content');
-            const markdownContent = document.getElementById('markdown-content');
-            markdownContent.innerHTML = '<div class="loading">Loading...</div>';
-            currentFile = path;
-
-            // Update URL hash for shareable links
-            if (updateHash && window.location.hash !== '#' + path) {
-                history.pushState(null, '', '#' + path);
+                return false;
             }
 
-            try {
-                const response = await fetch(path);
-                if (!response.ok) {
-                    throw new Error(`Failed to load ${path}`);
+            // Update sidebar active state
+            function updateSidebarActive(path) {
+                document
+                    .querySelectorAll(".nav-section-item")
+                    .forEach((item) => {
+                        item.classList.toggle(
+                            "active",
+                            item.dataset.path === path,
+                        );
+                    });
+            }
+
+            // Update mobile menu active state
+            function updateMobileMenuActive(category, path) {
+                const categoryDisplayName =
+                    getCategoryDisplayName(category).toLowerCase();
+
+                document
+                    .querySelectorAll(".mobile-submenu-item")
+                    .forEach((item) => {
+                        item.classList.toggle(
+                            "active",
+                            item.dataset.path === path,
+                        );
+                    });
+                document
+                    .querySelectorAll(".mobile-section-header")
+                    .forEach((header) => {
+                        const sectionCategory =
+                            header.textContent.toLowerCase();
+                        const isActive =
+                            sectionCategory === categoryDisplayName;
+                        header.classList.toggle("active", isActive);
+                        // Expand active section, collapse others
+                        if (isActive) {
+                            header.classList.add("expanded");
+                        } else {
+                            header.classList.remove("expanded");
+                        }
+                    });
+                // Update active section (parent div) and expand submenu
+                document
+                    .querySelectorAll(".mobile-section")
+                    .forEach((section) => {
+                        const sectionHeader = section.querySelector(
+                            ".mobile-section-header",
+                        );
+                        const submenu =
+                            section.querySelector(".mobile-submenu");
+                        const sectionCategory = sectionHeader
+                            ? sectionHeader.textContent.toLowerCase()
+                            : "";
+                        const isActive =
+                            sectionCategory === categoryDisplayName;
+                        section.classList.toggle("active", isActive);
+                        // Expand active section's submenu, collapse others
+                        if (submenu) {
+                            if (isActive) {
+                                submenu.classList.add("expanded");
+                            } else {
+                                submenu.classList.remove("expanded");
+                            }
+                        }
+                    });
+            }
+
+            // Load and render markdown file
+            async function loadFile(path, updateHash = true) {
+                const content = document.getElementById("content");
+                const markdownContent =
+                    document.getElementById("markdown-content");
+                markdownContent.innerHTML =
+                    '<div class="loading">Loading...</div>';
+                currentFile = path;
+
+                // Update URL hash for shareable links
+                if (updateHash && window.location.hash !== "#" + path) {
+                    history.pushState(null, "", "#" + path);
                 }
 
-                const markdown = await response.text();
-                const html = marked.parse(markdown);
-                markdownContent.innerHTML = html;
+                try {
+                    const response = await fetch(path);
+                    if (!response.ok) {
+                        throw new Error(`Failed to load ${path}`);
+                    }
 
-                // Scroll to top when navigating to a new page
-                content.scrollTop = 0;
-                window.scrollTo(0, 0);
+                    const markdown = await response.text();
+                    const html = marked.parse(markdown);
+                    markdownContent.innerHTML = html;
 
-                // Make external links open in new tab and add icon
-                markdownContent.querySelectorAll('a[href^="http"]').forEach(link => {
-                    link.setAttribute('target', '_blank');
-                    link.setAttribute('rel', 'noopener noreferrer');
-                    // Add external link icon
-                    const icon = document.createElement('span');
-                    icon.className = 'material-icons external-link-icon';
-                    icon.textContent = 'open_in_new';
-                    link.appendChild(icon);
-                });
+                    // Scroll to top when navigating to a new page
+                    content.scrollTop = 0;
+                    window.scrollTo(0, 0);
 
-                // Handle internal .md links to use JavaScript navigation
-                markdownContent.querySelectorAll('a[href$=".md"]').forEach(link => {
-                    const href = link.getAttribute('href');
-                    // Only handle relative links (not external URLs)
-                    if (!href.startsWith('http')) {
-                        link.addEventListener('click', (e) => {
-                            e.preventDefault();
-                            // Resolve relative path based on current file's directory
-                            const currentDir = currentFile.substring(0, currentFile.lastIndexOf('/') + 1);
-                            let targetPath = currentDir + href;
-
-                            // Normalize path (resolve ../)
-                            const parts = targetPath.split('/');
-                            const normalized = [];
-                            for (const part of parts) {
-                                if (part === '..') {
-                                    normalized.pop();
-                                } else if (part !== '.' && part !== '') {
-                                    normalized.push(part);
-                                }
-                            }
-                            targetPath = normalized.join('/');
-
-                            // Find which category contains this file and update navigation
-                            for (const [category, files] of Object.entries(fileStructure)) {
-                                const file = files.find(f => f.path === targetPath);
-                                if (file) {
-                                    currentCategory = category;
-                                    loadFile(targetPath);
-                                    updateSidebarActive(targetPath);
-                                    updateMobileMenuActive(category, targetPath);
-                                    return;
-                                }
-                            }
-
-                            // If not found in fileStructure, just load the file
-                            loadFile(targetPath);
+                    // Make external links open in new tab and add icon
+                    markdownContent
+                        .querySelectorAll('a[href^="http"]')
+                        .forEach((link) => {
+                            link.setAttribute("target", "_blank");
+                            link.setAttribute("rel", "noopener noreferrer");
+                            // Add external link icon
+                            const icon = document.createElement("span");
+                            icon.className =
+                                "material-icons external-link-icon";
+                            icon.textContent = "open_in_new";
+                            link.appendChild(icon);
                         });
+
+                    // Handle internal .md links to use JavaScript navigation
+                    markdownContent
+                        .querySelectorAll('a[href$=".md"]')
+                        .forEach((link) => {
+                            const href = link.getAttribute("href");
+                            // Only handle relative links (not external URLs)
+                            if (!href.startsWith("http")) {
+                                link.addEventListener("click", (e) => {
+                                    e.preventDefault();
+                                    // Resolve relative path based on current file's directory
+                                    const currentDir = currentFile.substring(
+                                        0,
+                                        currentFile.lastIndexOf("/") + 1,
+                                    );
+                                    let targetPath = currentDir + href;
+
+                                    // Normalize path (resolve ../)
+                                    const parts = targetPath.split("/");
+                                    const normalized = [];
+                                    for (const part of parts) {
+                                        if (part === "..") {
+                                            normalized.pop();
+                                        } else if (
+                                            part !== "." &&
+                                            part !== ""
+                                        ) {
+                                            normalized.push(part);
+                                        }
+                                    }
+                                    targetPath = normalized.join("/");
+
+                                    // Find which category contains this file and update navigation
+                                    for (const [
+                                        category,
+                                        files,
+                                    ] of Object.entries(fileStructure)) {
+                                        const file = files.find(
+                                            (f) => f.path === targetPath,
+                                        );
+                                        if (file) {
+                                            currentCategory = category;
+                                            loadFile(targetPath);
+                                            updateSidebarActive(targetPath);
+                                            updateMobileMenuActive(
+                                                category,
+                                                targetPath,
+                                            );
+                                            return;
+                                        }
+                                    }
+
+                                    // If not found in fileStructure, just load the file
+                                    loadFile(targetPath);
+                                });
+                            }
+                        });
+
+                    // Add special class for people page to style names in orange
+                    if (path === "reference/people.md") {
+                        content.classList.add("people-page");
+                    } else {
+                        content.classList.remove("people-page");
                     }
-                });
 
-                // Add special class for people page to style names in orange
-                if (path === 'reference/people.md') {
-                    content.classList.add('people-page');
-                } else {
-                    content.classList.remove('people-page');
-                }
-
-                // Add special class for examples page
-                if (path.startsWith('examples/')) {
-                    content.classList.add('examples-page');
-                } else {
-                    content.classList.remove('examples-page');
-                }
-            } catch (error) {
-                markdownContent.innerHTML = `
+                    // Add special class for examples page
+                    if (path.startsWith("examples/")) {
+                        content.classList.add("examples-page");
+                    } else {
+                        content.classList.remove("examples-page");
+                    }
+                } catch (error) {
+                    markdownContent.innerHTML = `
                     <div class="empty-state">
                         <p>Failed to load file: ${path}</p>
                         <p>${error.message}</p>
                     </div>
                 `;
-            }
-        }
-
-        // Populate Mobile Navigation Menu
-        function populateMobileMenu() {
-            const mobileNavContent = document.getElementById('mobile-nav-content');
-            mobileNavContent.innerHTML = '';
-
-            // Loop through each category in fileStructure
-            Object.keys(fileStructure).forEach(category => {
-                // Create section container
-                const section = document.createElement('div');
-                section.className = 'mobile-section';
-
-                // Create section header (category button)
-                const header = document.createElement('button');
-                header.className = 'mobile-section-header';
-                header.textContent = getCategoryDisplayName(category);
-                header.setAttribute('aria-expanded', 'false');
-
-                // Create submenu container
-                const submenu = document.createElement('div');
-                submenu.className = 'mobile-submenu';
-
-                // Populate submenu with files
-                fileStructure[category].forEach(file => {
-                    const item = document.createElement('a');
-                    item.className = 'mobile-submenu-item';
-                    item.dataset.category = category;
-                    item.dataset.path = file.path;
-
-                    if (file.external) {
-                        // External link - open in new tab
-                        item.href = file.path;
-                        item.target = '_blank';
-                        item.rel = 'noopener noreferrer';
-                        item.dataset.external = 'true';
-                        // Add text and external link icon
-                        item.appendChild(document.createTextNode(file.name));
-                        const icon = document.createElement('span');
-                        icon.className = 'material-icons external-link-icon';
-                        icon.textContent = 'open_in_new';
-                        item.appendChild(icon);
-                    } else {
-                        item.textContent = file.name;
-                        item.href = '#';
-                    }
-
-                    submenu.appendChild(item);
-                });
-
-                // Append elements
-                section.appendChild(header);
-                section.appendChild(submenu);
-                mobileNavContent.appendChild(section);
-            });
-        }
-
-        // Mobile Navigation Functions
-        function openMobileMenu() {
-            const overlay = document.getElementById('mobile-nav-overlay');
-            const hamburgerBtn = document.getElementById('hamburger-btn');
-            overlay.style.display = 'block';
-            // Trigger reflow to enable CSS transition
-            overlay.offsetHeight;
-            overlay.classList.add('open');
-            hamburgerBtn.classList.add('open');
-            document.body.classList.add('menu-open');
-            // Expand active section to show current location
-            if (currentFile && currentCategory) {
-                updateMobileMenuActive(currentCategory, currentFile);
-            }
-            // Move Google Translate widget into mobile panel
-            const widget = document.getElementById('google_translate_element');
-            const mobilePanel = document.getElementById('mobile-nav-panel');
-            if (widget && mobilePanel && !mobilePanel.contains(widget)) {
-                mobilePanel.appendChild(widget);
-            }
-        }
-
-        function closeMobileMenu() {
-            const overlay = document.getElementById('mobile-nav-overlay');
-            const hamburgerBtn = document.getElementById('hamburger-btn');
-            overlay.classList.remove('open');
-            hamburgerBtn.classList.remove('open');
-            document.body.classList.remove('menu-open');
-            // Wait for transition to complete before hiding
-            setTimeout(() => {
-                if (!overlay.classList.contains('open')) {
-                    overlay.style.display = 'none';
-                }
-            }, 300);
-        }
-
-        function toggleMobileSection(event) {
-            const header = event.currentTarget;
-            const section = header.parentElement;
-            const submenu = section.querySelector('.mobile-submenu');
-
-            // Toggle expanded state
-            header.classList.toggle('expanded');
-            submenu.classList.toggle('expanded');
-        }
-
-        function handleMobileSubmenuClick(event) {
-            const item = event.currentTarget;
-            const category = item.dataset.category;
-            const path = item.dataset.path;
-
-            // Update current category
-            currentCategory = category;
-
-            // Load the file
-            loadFile(path);
-
-            // Update active states in mobile menu - items
-            document.querySelectorAll('.mobile-submenu-item').forEach(menuItem => {
-                menuItem.classList.remove('active');
-            });
-            item.classList.add('active');
-
-            // Update active section header and collapse all sections
-            document.querySelectorAll('.mobile-section-header').forEach(header => {
-                header.classList.remove('active');
-                header.classList.remove('expanded');
-            });
-            document.querySelectorAll('.mobile-submenu').forEach(submenu => {
-                submenu.classList.remove('expanded');
-            });
-
-            // Expand and activate the new section
-            const activeSection = item.closest('.mobile-section');
-            if (activeSection) {
-                // Remove active from all sections
-                document.querySelectorAll('.mobile-section').forEach(section => {
-                    section.classList.remove('active');
-                });
-                // Add active to current section
-                activeSection.classList.add('active');
-
-                // Expand header and submenu
-                const sectionHeader = activeSection.querySelector('.mobile-section-header');
-                const submenu = activeSection.querySelector('.mobile-submenu');
-                if (sectionHeader) {
-                    sectionHeader.classList.add('active');
-                    sectionHeader.classList.add('expanded');
-                }
-                if (submenu) {
-                    submenu.classList.add('expanded');
                 }
             }
 
-            // Close the mobile menu
-            closeMobileMenu();
-        }
+            // Populate Mobile Navigation Menu
+            function populateMobileMenu() {
+                const mobileNavContent =
+                    document.getElementById("mobile-nav-content");
+                mobileNavContent.innerHTML = "";
 
-        // Setup Mobile Navigation Event Listeners
-        function setupMobileNavigation() {
-            // Populate mobile menu
-            populateMobileMenu();
+                // Loop through each category in fileStructure
+                Object.keys(fileStructure).forEach((category) => {
+                    // Create section container
+                    const section = document.createElement("div");
+                    section.className = "mobile-section";
 
-            // Hamburger button click → toggle menu
-            const hamburgerBtn = document.getElementById('hamburger-btn');
-            if (hamburgerBtn) {
-                hamburgerBtn.addEventListener('click', () => {
-                    if (hamburgerBtn.classList.contains('open')) {
-                        closeMobileMenu();
-                    } else {
-                        openMobileMenu();
-                    }
+                    // Create section header (category button)
+                    const header = document.createElement("button");
+                    header.className = "mobile-section-header";
+                    header.textContent = getCategoryDisplayName(category);
+                    header.setAttribute("aria-expanded", "false");
+
+                    // Create submenu container
+                    const submenu = document.createElement("div");
+                    submenu.className = "mobile-submenu";
+
+                    // Populate submenu with files
+                    fileStructure[category].forEach((file) => {
+                        const item = document.createElement("a");
+                        item.className = "mobile-submenu-item";
+                        item.dataset.category = category;
+                        item.dataset.path = file.path;
+
+                        if (file.external) {
+                            // External link - open in new tab
+                            item.href = file.path;
+                            item.target = "_blank";
+                            item.rel = "noopener noreferrer";
+                            item.dataset.external = "true";
+                            // Add text and external link icon
+                            item.appendChild(
+                                document.createTextNode(file.name),
+                            );
+                            const icon = document.createElement("span");
+                            icon.className =
+                                "material-icons external-link-icon";
+                            icon.textContent = "open_in_new";
+                            item.appendChild(icon);
+                        } else {
+                            item.textContent = file.name;
+                            item.href = "#";
+                        }
+
+                        submenu.appendChild(item);
+                    });
+
+                    // Append elements
+                    section.appendChild(header);
+                    section.appendChild(submenu);
+                    mobileNavContent.appendChild(section);
                 });
             }
 
-            // Close button click → close menu
-            const closeBtn = document.getElementById('mobile-close-btn');
-            if (closeBtn) {
-                closeBtn.addEventListener('click', closeMobileMenu);
+            // Mobile Navigation Functions
+            function openMobileMenu() {
+                const overlay = document.getElementById("mobile-nav-overlay");
+                const hamburgerBtn = document.getElementById("hamburger-btn");
+                overlay.style.display = "block";
+                // Trigger reflow to enable CSS transition
+                overlay.offsetHeight;
+                overlay.classList.add("open");
+                hamburgerBtn.classList.add("open");
+                document.body.classList.add("menu-open");
+                // Expand active section to show current location
+                if (currentFile && currentCategory) {
+                    updateMobileMenuActive(currentCategory, currentFile);
+                }
+                // Move Google Translate widget into mobile panel
+                const widget = document.getElementById(
+                    "google_translate_element",
+                );
+                const mobilePanel = document.getElementById("mobile-nav-panel");
+                if (widget && mobilePanel && !mobilePanel.contains(widget)) {
+                    mobilePanel.appendChild(widget);
+                }
             }
 
-            // Backdrop click → close menu
-            const overlay = document.getElementById('mobile-nav-overlay');
-            if (overlay) {
-                overlay.addEventListener('click', (e) => {
-                    // Only close if clicking the backdrop, not the panel
-                    if (e.target.id === 'mobile-nav-overlay') {
-                        closeMobileMenu();
+            function closeMobileMenu() {
+                const overlay = document.getElementById("mobile-nav-overlay");
+                const hamburgerBtn = document.getElementById("hamburger-btn");
+                overlay.classList.remove("open");
+                hamburgerBtn.classList.remove("open");
+                document.body.classList.remove("menu-open");
+                // Wait for transition to complete before hiding
+                setTimeout(() => {
+                    if (!overlay.classList.contains("open")) {
+                        overlay.style.display = "none";
                     }
-                });
+                }, 300);
             }
 
-            // Section header click → toggle expand/collapse
-            document.querySelectorAll('.mobile-section-header').forEach(header => {
-                header.addEventListener('click', toggleMobileSection);
-            });
+            function toggleMobileSection(event) {
+                const header = event.currentTarget;
+                const section = header.parentElement;
+                const submenu = section.querySelector(".mobile-submenu");
 
-            // Submenu item click → load file + close menu (skip external links)
-            document.querySelectorAll('.mobile-submenu-item').forEach(item => {
-                if (item.dataset.external !== 'true') {
-                    item.addEventListener('click', (e) => {
-                        e.preventDefault();
-                        handleMobileSubmenuClick(e);
+                // Toggle expanded state
+                header.classList.toggle("expanded");
+                submenu.classList.toggle("expanded");
+            }
+
+            function handleMobileSubmenuClick(event) {
+                const item = event.currentTarget;
+                const category = item.dataset.category;
+                const path = item.dataset.path;
+
+                // Update current category
+                currentCategory = category;
+
+                // Load the file
+                loadFile(path);
+
+                // Update active states in mobile menu - items
+                document
+                    .querySelectorAll(".mobile-submenu-item")
+                    .forEach((menuItem) => {
+                        menuItem.classList.remove("active");
+                    });
+                item.classList.add("active");
+
+                // Update active section header and collapse all sections
+                document
+                    .querySelectorAll(".mobile-section-header")
+                    .forEach((header) => {
+                        header.classList.remove("active");
+                        header.classList.remove("expanded");
+                    });
+                document
+                    .querySelectorAll(".mobile-submenu")
+                    .forEach((submenu) => {
+                        submenu.classList.remove("expanded");
+                    });
+
+                // Expand and activate the new section
+                const activeSection = item.closest(".mobile-section");
+                if (activeSection) {
+                    // Remove active from all sections
+                    document
+                        .querySelectorAll(".mobile-section")
+                        .forEach((section) => {
+                            section.classList.remove("active");
+                        });
+                    // Add active to current section
+                    activeSection.classList.add("active");
+
+                    // Expand header and submenu
+                    const sectionHeader = activeSection.querySelector(
+                        ".mobile-section-header",
+                    );
+                    const submenu =
+                        activeSection.querySelector(".mobile-submenu");
+                    if (sectionHeader) {
+                        sectionHeader.classList.add("active");
+                        sectionHeader.classList.add("expanded");
+                    }
+                    if (submenu) {
+                        submenu.classList.add("expanded");
+                    }
+                }
+
+                // Close the mobile menu
+                closeMobileMenu();
+            }
+
+            // Setup Mobile Navigation Event Listeners
+            function setupMobileNavigation() {
+                // Populate mobile menu
+                populateMobileMenu();
+
+                // Hamburger button click → toggle menu
+                const hamburgerBtn = document.getElementById("hamburger-btn");
+                if (hamburgerBtn) {
+                    hamburgerBtn.addEventListener("click", () => {
+                        if (hamburgerBtn.classList.contains("open")) {
+                            closeMobileMenu();
+                        } else {
+                            openMobileMenu();
+                        }
                     });
                 }
+
+                // Close button click → close menu
+                const closeBtn = document.getElementById("mobile-close-btn");
+                if (closeBtn) {
+                    closeBtn.addEventListener("click", closeMobileMenu);
+                }
+
+                // Backdrop click → close menu
+                const overlay = document.getElementById("mobile-nav-overlay");
+                if (overlay) {
+                    overlay.addEventListener("click", (e) => {
+                        // Only close if clicking the backdrop, not the panel
+                        if (e.target.id === "mobile-nav-overlay") {
+                            closeMobileMenu();
+                        }
+                    });
+                }
+
+                // Section header click → toggle expand/collapse
+                document
+                    .querySelectorAll(".mobile-section-header")
+                    .forEach((header) => {
+                        header.addEventListener("click", toggleMobileSection);
+                    });
+
+                // Submenu item click → load file + close menu (skip external links)
+                document
+                    .querySelectorAll(".mobile-submenu-item")
+                    .forEach((item) => {
+                        if (item.dataset.external !== "true") {
+                            item.addEventListener("click", (e) => {
+                                e.preventDefault();
+                                handleMobileSubmenuClick(e);
+                            });
+                        }
+                    });
+            }
+
+            // Scroll to Top Button Functionality
+            const scrollToTopBtn = document.getElementById("scroll-to-top");
+            const contentArea = document.getElementById("content");
+            const footer = document.querySelector("footer");
+
+            // Function to check scroll position and show/hide button
+            function handleScroll() {
+                const scrollTop =
+                    contentArea.scrollTop ||
+                    window.pageYOffset ||
+                    document.documentElement.scrollTop;
+
+                // Show/hide button based on scroll position
+                if (scrollTop > 100) {
+                    scrollToTopBtn.classList.add("visible");
+                } else {
+                    scrollToTopBtn.classList.remove("visible");
+                }
+
+                // Smoothly adjust button position when footer is visible
+                const isMobile = window.innerWidth <= 1024;
+                const footerRect = footer.getBoundingClientRect();
+                const viewportHeight = window.innerHeight;
+
+                // Calculate how much of the footer is visible (0 to 1)
+                let footerVisibility = 0;
+                if (footerRect.top < viewportHeight) {
+                    const visibleHeight = Math.min(
+                        viewportHeight - footerRect.top,
+                        footerRect.height,
+                    );
+                    footerVisibility = Math.max(
+                        0,
+                        Math.min(1, visibleHeight / footerRect.height),
+                    );
+                }
+
+                // Interpolate between 2rem and max based on visibility
+                // Start moving at 20% visibility, reach full offset at 80% visibility
+                const startThreshold = 0.2;
+                const endThreshold = 0.8;
+                let progress = 0;
+
+                if (footerVisibility > startThreshold) {
+                    progress = Math.min(
+                        1,
+                        (footerVisibility - startThreshold) /
+                            (endThreshold - startThreshold),
+                    );
+                }
+
+                const minBottom = 2; // 2rem
+                const maxBottom = isMobile ? 9.5 : 6.5; // 9.5rem for mobile, 6.5rem for desktop
+                const bottomPosition =
+                    minBottom + progress * (maxBottom - minBottom);
+
+                scrollToTopBtn.style.bottom = `${bottomPosition}rem`;
+
+                // Position button relative to content area's right edge on desktop
+                if (!isMobile) {
+                    const contentRect = contentArea.getBoundingClientRect();
+                    const buttonRightPosition =
+                        window.innerWidth - contentRect.right + 32; // 32px = 2rem
+                    scrollToTopBtn.style.right = `${buttonRightPosition}px`;
+                } else {
+                    scrollToTopBtn.style.right = "2rem";
+                }
+            }
+
+            // Listen to both content area and window scroll (handles desktop and mobile)
+            contentArea.addEventListener("scroll", handleScroll);
+            window.addEventListener("scroll", handleScroll);
+            window.addEventListener("resize", handleScroll);
+            // Initial call to position button correctly
+            handleScroll();
+
+            // Scroll to top when button is clicked
+            scrollToTopBtn.addEventListener("click", () => {
+                // Scroll both content area and window to ensure it works in all layouts
+                contentArea.scrollTo({
+                    top: 0,
+                    behavior: "smooth",
+                });
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth",
+                });
             });
-        }
+        </script>
 
-        // Scroll to Top Button Functionality
-        const scrollToTopBtn = document.getElementById('scroll-to-top');
-        const contentArea = document.getElementById('content');
-        const footer = document.querySelector('footer');
-
-        // Function to check scroll position and show/hide button
-        function handleScroll() {
-            const scrollTop = contentArea.scrollTop || window.pageYOffset || document.documentElement.scrollTop;
-
-            // Show/hide button based on scroll position
-            if (scrollTop > 100) {
-                scrollToTopBtn.classList.add('visible');
-            } else {
-                scrollToTopBtn.classList.remove('visible');
+        <!-- Google Translate -->
+        <script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement(
+                    {
+                        pageLanguage: "en",
+                        includedLanguages: "en,pt,es",
+                        layout: google.translate.TranslateElement.InlineLayout
+                            .SIMPLE,
+                        autoDisplay: false,
+                    },
+                    "google_translate_element",
+                );
             }
-
-            // Smoothly adjust button position when footer is visible
-            const isMobile = window.innerWidth <= 1024;
-            const footerRect = footer.getBoundingClientRect();
-            const viewportHeight = window.innerHeight;
-
-            // Calculate how much of the footer is visible (0 to 1)
-            let footerVisibility = 0;
-            if (footerRect.top < viewportHeight) {
-                const visibleHeight = Math.min(viewportHeight - footerRect.top, footerRect.height);
-                footerVisibility = Math.max(0, Math.min(1, visibleHeight / footerRect.height));
-            }
-
-            // Interpolate between 2rem and max based on visibility
-            // Start moving at 20% visibility, reach full offset at 80% visibility
-            const startThreshold = 0.2;
-            const endThreshold = 0.8;
-            let progress = 0;
-
-            if (footerVisibility > startThreshold) {
-                progress = Math.min(1, (footerVisibility - startThreshold) / (endThreshold - startThreshold));
-            }
-
-            const minBottom = 2; // 2rem
-            const maxBottom = isMobile ? 9.5 : 6.5; // 9.5rem for mobile, 6.5rem for desktop
-            const bottomPosition = minBottom + (progress * (maxBottom - minBottom));
-
-            scrollToTopBtn.style.bottom = `${bottomPosition}rem`;
-
-            // Position button relative to content area's right edge on desktop
-            if (!isMobile) {
-                const contentRect = contentArea.getBoundingClientRect();
-                const buttonRightPosition = window.innerWidth - contentRect.right + 32; // 32px = 2rem
-                scrollToTopBtn.style.right = `${buttonRightPosition}px`;
-            } else {
-                scrollToTopBtn.style.right = '2rem';
-            }
-        }
-
-        // Listen to both content area and window scroll (handles desktop and mobile)
-        contentArea.addEventListener('scroll', handleScroll);
-        window.addEventListener('scroll', handleScroll);
-        window.addEventListener('resize', handleScroll);
-        // Initial call to position button correctly
-        handleScroll();
-
-        // Scroll to top when button is clicked
-        scrollToTopBtn.addEventListener('click', () => {
-            // Scroll both content area and window to ensure it works in all layouts
-            contentArea.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    </script>
-
-    <!-- Google Translate -->
-    <script type="text/javascript">
-    function googleTranslateElementInit() {
-        new google.translate.TranslateElement({
-            pageLanguage: 'en',
-            includedLanguages: 'en,pt,es',
-            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-            autoDisplay: false
-        }, 'google_translate_element');
-    }
-    </script>
-    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-</body>
+        </script>
+        <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    </body>
 </html>
