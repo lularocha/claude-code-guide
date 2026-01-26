@@ -9,11 +9,7 @@
   </iframe>
 </div>
 
-### IMPORTANT NOTE
-
 **Don't use Anthropic's plugin version, use the original Geoffrey Huntley vision**
-
-Here is why: https://x.com/gmickel/status/2009939771171434867
 
 ---
 
@@ -245,6 +241,8 @@ exit 1
 ## References
 
 **Geoffrey Huntley** — [https://x.com/GeoffreyHuntley](https://x.com/GeoffreyHuntley)
+
+Don't us Anthropic's Ralph Loop Plugin, here is why: https://x.com/gmickel/status/2009939771171434867
 
 [Ralph Wiggum: Claude Code's new way to run autonomously](https://medium.com/@joe.njenga/ralph-wiggum-claude-code-new-way-to-run-autonomously-for-hours-without-drama-095f47fbd467)
 by [Joe Njenga](https://medium.com/@joe.njenga)
