@@ -18,7 +18,7 @@ It's my feedback learning loop: study, practice, learn, document, improve.**
 
 - **[CLAUDE.md](../advanced/claude-md-guide.md)** — Project-specific instructions
 - **[Advanced Techniques](../advanced/advanced-techniques.md)** — Workflows and automation
-- **[Ralph Wiggun Loop](../advanced/autonomous-loops.md)** — Run Claude independently on complex tasks
+- **[Ralph Wiggun Loop](../advanced/ralph-loop.md)** — Run Claude independently on complex tasks
 - **[Skills](../advanced/skills.md)** — Extend Claude with specialized capabilities
 - **[Plugins](../advanced/plugins.md)** — Plugin system for extending Claude Code
 
