@@ -1,12 +1,19 @@
 # Ralph Wiggun Loop
 
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 1.5rem;">
+  <iframe
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+    src="https://www.youtube.com/embed/I7azCAgoUHc"
+    frameborder="0"
+    allowfullscreen>
+  </iframe>
+</div>
+
 ### IMPORTANT NOTE
 
 **Don't use Anthropic's plugin version, use the original Geoffrey Huntley vision**
 
 Here is why: https://x.com/gmickel/status/2009939771171434867
-
-Geoffrey Huntley on Twitter: https://x.com/GeoffreyHuntley
 
 ---
 
