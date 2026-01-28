@@ -5,14 +5,16 @@ A showcase of projects built with Claude Code and other AIs.
 ## [Glossary Builder](https://sugiro-glossary.vercel.app/)
 
 Build glossaries powered by Claude AI.<br> 
-Just enter a single term (Seed Word) to generate 12 related terms with clear definitions.
+Just enter a single term (Seed Word) to generate 12 related terms with clear definitions.<br>
+Includes Learn More feature that expands a term definition and adds sources and links.<br>
 
 ---
 
 ## [Prompt Builder](https://sugiro-prompt.vercel.app/)
 
 Create high-quality AI prompts.<br>
-Using the strategy: Context + Persona + Tech Stack + Examples.
+Using the strategy: System Prompt + User Prompt.<br>
+Includes Agent Analysis that extracts patterns from images to suggest prompt specifications.
 
 _Note: Claude has a [Prompt Generator Tool](https://platform.claude.com/dashboard) in the Developer Plataform's Console<br>(requires API account with credits)._
 
