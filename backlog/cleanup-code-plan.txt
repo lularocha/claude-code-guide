@@ -1,0 +1,194 @@
+Here's a summary of what I'm proposing, ordered from safest to least risky:                  
+                                                                                               
+  Step 1-2 — Remove dead code (zero risk): ~15 lines of CSS rules for a disabled collapse      
+  feature, an IE-only property, a no-op mobile hover rule, and their corresponding dead JS     
+  (unused class additions, commented-out code).                                                
+                                                                                               
+  Step 3 — Extract helper (low risk): The same 4-line icon creation block is copy-pasted 3     
+  times. Extract to one createExternalLinkIcon() function.                                     
+                                                                                               
+  Step 4 — Consolidate mobile active state (medium risk, biggest win):                         
+  handleMobileSubmenuClick() is ~60 lines of manual DOM toggling that duplicates what          
+  updateMobileMenuActive() already does. Replace with a ~8 line function that reuses the       
+  existing logic.                                                                              
+                                                                                               
+  Step 5-6 — Cache DOM refs + merge open/close (low risk): Cache 2 repeatedly-queried elements,
+   and merge openMobileMenu()/closeMobileMenu() into one toggleMobileMenu(open).               
+                                                                                               
+  Step 7 — Margin shorthand (zero risk, cosmetic): 3 heading rules use verbose                 
+  margin-top/margin-bottom instead of shorthand.                                               
+                                                                                               
+  Total impact: ~80 lines removed, no behavior changes.                                        
+                                                                                               
+  I also listed things I'm deliberately not changing (CSS variables, file splitting, scroll    
+  debouncing) to keep it focused.                                                              
+                                                                                               
+⏺ User approved Claude's plan                                                                  
+  ⎿  Plan saved to: ~/.claude/plans/toasty-seeking-summit.md · /plan to edit                   
+     CSS & JS Streamlining Plan for index.html                                                 
+                                                                                               
+     All changes are in                                                                        
+     /Users/rocha/Documents/ClaudeCode/Projects/claude-code-guide/index.html.                  
+                                                                                               
+     Changes are ordered safest-first. Each step is independently testable.                    
+                                                                                               
+     ---                                                                                       
+     Step 1: Remove Dead CSS (zero risk)                                                       
+                                                                                               
+     Remove CSS rules that have no visible effect:                                             
+                                                                                               
+     - Lines 365-375: Remove .nav-section-header::after and                                    
+     .nav-section-header.expanded::after — collapse arrows hidden with display: none,          
+     sections are always expanded                                                              
+     - Lines 385-387: Remove .nav-section-items.expanded — .nav-section-items already has      
+     max-height: none (line 379), so this .expanded rule does nothing                          
+     - Line 426: Remove -ms-overflow-style: none — IE is dead, modern Edge uses Chromium       
+     - Lines 742-744: Remove #scroll-to-top:hover from mobile media query — resets hover t     
+      the default #f80 (no-op on touch devices)                                                
+                                                                                               
+     Verify: Site looks identical on desktop and mobile. Sidebar sections remain expanded.     
+     Scroll-to-top button works.                                                               
+                                                                                               
+     ---                                                                                       
+     Step 2: Remove Dead JS (zero risk)                                                        
+                                                                                               
+     - Lines 916, 923: Remove header.classList.add("expanded") and                             
+     itemsContainer.classList.add("expanded") in renderSidebarNavigation() — these add         
+     classes whose CSS rules we removed in Step 1 (and were already no-ops)                    
+     - Lines 960-965: Remove commented-out toggle event listener block                         
+                                                                                               
+     Verify: Desktop sidebar navigation still renders correctly. All nav items clickable.      
+                                                                                               
+     ---                                                                                       
+     Step 3: Consolidate External Link Icon Creation (low risk)                                
+                                                                                               
+     Extract a helper function for creating the external link icon span, replacing 3           
+     duplicate blocks:                                                                         
+                                                                                               
+     function createExternalLinkIcon() {                                                       
+         const icon = document.createElement("span");                                          
+         icon.className = "material-icons external-link-icon";                                 
+         icon.textContent = "open_in_new";                                                     
+         return icon;                                                                          
+     }                                                                                         
+                                                                                               
+     Replace the icon creation at:                                                             
+     - renderSidebarNavigation() (lines 940-944)                                               
+     - populateMobileMenu() (lines 1219-1223)                                                  
+     - loadFile() (lines 1093-1097)                                                            
+                                                                                               
+     Verify: External links in sidebar, mobile menu, and markdown content all show the         
+     icon.                                                                                     
+                                                                                               
+     ---                                                                                       
+     Step 4: Consolidate Mobile Menu Active State Logic (medium risk)                          
+                                                                                               
+     handleMobileSubmenuClick() (lines 1279-1340) manually toggles active/expanded classes     
+     across ~50 lines. This duplicates what updateMobileMenuActive() already does. Replace     
+     the manual DOM manipulation with a call to updateMobileMenuActive():                      
+                                                                                               
+     function handleMobileSubmenuClick(event) {                                                
+         const item = event.currentTarget;                                                     
+         const category = item.dataset.category;                                               
+         const path = item.dataset.path;                                                       
+         currentCategory = category;                                                           
+         loadFile(path);                                                                       
+         updateSidebarActive(path);                                                            
+         updateMobileMenuActive(category, path);                                               
+         closeMobileMenu();                                                                    
+     }                                                                                         
+                                                                                               
+     This reduces ~60 lines to ~8 lines and uses the same code path as hash navigation.        
+                                                                                               
+     Verify: Click items in mobile menu — correct item highlighted, correct section            
+     expanded, page loads, menu closes. Re-open menu and verify active state is preserved.     
+                                                                                               
+     ---                                                                                       
+     Step 5: Cache Repeated DOM Lookups (low risk)                                             
+                                                                                               
+     Cache elements queried multiple times. Move to top-level alongside existing cached        
+     elements (lines 1397-1399):                                                               
+                                                                                               
+     const overlay = document.getElementById("mobile-nav-overlay");                            
+     const hamburgerBtn = document.getElementById("hamburger-btn");                            
+                                                                                               
+     Update openMobileMenu(), closeMobileMenu(), and setupMobileNavigation() to use cached     
+     references instead of document.getElementById() calls.                                    
+                                                                                               
+     Verify: Hamburger menu opens/closes correctly. Backdrop click closes menu. Close          
+     button works.                                                                             
+                                                                                               
+     ---                                                                                       
+     Step 6: Merge open/close Mobile Menu into Toggle (low risk)                               
+                                                                                               
+     Combine openMobileMenu() and closeMobileMenu() into a single toggleMobileMenu(open)       
+     function to reduce duplication:                                                           
+                                                                                               
+     function toggleMobileMenu(open) {                                                         
+         if (open) {                                                                           
+             overlay.style.display = "block";                                                  
+             overlay.offsetHeight; // trigger reflow                                           
+         }                                                                                     
+         overlay.classList.toggle("open", open);                                               
+         hamburgerBtn.classList.toggle("open", open);                                          
+         document.body.classList.toggle("menu-open", open);                                    
+         if (open && currentFile && currentCategory) {                                         
+             updateMobileMenuActive(currentCategory, currentFile);                             
+         }                                                                                     
+         if (!open) {                                                                          
+             setTimeout(() => {                                                                
+                 if (!overlay.classList.contains("open")) {                                    
+                     overlay.style.display = "none";                                           
+                 }                                                                             
+             }, 300);                                                                          
+         }                                                                                     
+     }                                                                                         
+                                                                                               
+     Update all callers (handleMobileSubmenuClick, setupMobileNavigation) to use               
+     toggleMobileMenu(true/false).                                                             
+                                                                                               
+     Verify: Same as Step 5 — hamburger open, close button, backdrop click, menu item clic     
+      all work correctly.                                                                      
+                                                                                               
+     ---                                                                                       
+     Step 7: Use Margin Shorthand in CSS (zero risk, cosmetic)                                 
+                                                                                               
+     Consolidate verbose margin declarations:                                                  
+                                                                                               
+     - .content h2: margin-top: 2rem; margin-bottom: 1rem; → margin: 2rem 0 1rem;              
+     - .content h3: margin-top: 1.5rem; margin-bottom: 0.75rem; → margin: 1.5rem 0 0.75rem     
+     - .content h4: margin-top: 1rem; margin-bottom: 0.5rem; → margin: 1rem 0 0.5rem;          
+                                                                                               
+     Verify: Heading spacing looks the same.                                                   
+                                                                                               
+     ---                                                                                       
+     What We're NOT Changing (and why)                                                         
+                                                                                               
+     - CSS variables for colors: Adds complexity for a small single-file project. Not a        
+     simplification.                                                                           
+     - Splitting CSS/JS into separate files: Changes architecture. Out of scope.               
+     - Desktop sidebar nav-section-item / mobile-submenu-item consolidation: These live in     
+     different media queries with different parent structures. Merging risks breaking          
+     mobile/desktop independently.                                                             
+     - Path normalization utility: Only used once. Extracting a function doesn't simplify.     
+     - Scroll handler debouncing: Would change behavior. The current handler is                
+     lightweight.                                                                              
+                                                                                               
+     ---                                                                                       
+     Estimated Impact                                                                          
+                                                                                               
+     - ~80 lines removed (dead CSS, dead JS, duplicated mobile active state logic)             
+     - 3 duplicate blocks → 1 helper (icon creation)                                           
+     - 2 functions → 1 (open/close menu merge)                                                 
+     - 6 getElementById calls → 2 cached references                                            
+                                                                                               
+     Verification                                                                              
+                                                                                               
+     After all changes, test end-to-end:                                                       
+     1. Desktop: sidebar nav works, all pages load, external links open in new tab with        
+     icon                                                                                      
+     2. Mobile: hamburger opens menu, items load pages, menu closes, active state correct      
+     3. Scroll-to-top button appears on scroll, repositions near footer, clicks scroll to      
+     top                                                                                       
+     4. Hash navigation works (paste URL with #advanced/skills.md, verify it loads)            
+     5. Browser back/forward buttons work
