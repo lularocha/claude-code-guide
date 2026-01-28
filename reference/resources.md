@@ -5,8 +5,8 @@
 Primary resources for learning Claude Code itself.
 
 ### Official Documentation
-- **[Claude Code Documentation](https://code.claude.com/docs/en/overview)** — Start here
-- **[Quickstart Guide](https://code.claude.com/docs/en/quickstart)** — Installation and setup
+- **[Quickstart Guide](https://code.claude.com/docs/en/quickstart)** — Install and overview
+- **[Claude Code Documentation](https://code.claude.com/docs/en/overview)** — Comprehensive guide
 - **[Official Skills Repository](https://github.com/anthropics/skills)** — Pre-built skills from Anthropic
 
 ### Courses
