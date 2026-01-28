@@ -7,8 +7,6 @@ A showcase of projects built with Claude Code and other AIs.
 Build glossaries powered by Claude AI.<br> 
 Just enter a single term (Seed Word) to generate 12 related terms with clear definitions.
 
-**Status**: Fully Operational
-
 ---
 
 ## [Prompt Builder](https://sugiro-prompt.vercel.app/)
@@ -16,9 +14,7 @@ Just enter a single term (Seed Word) to generate 12 related terms with clear def
 Create high-quality AI prompts.<br>
 Using the strategy: Context + Persona + Tech Stack + Examples.
 
-**Status**: Fully Operational
-
-_Claude also offers a built-in [Prompt Generator](https://platform.claude.com/dashboard) in the Console (requires API account with credits)._
+_Note: Claude also offers a [Prompt Generator Tool](https://platform.claude.com/dashboard) in the Developer Plataform's Console (requires API account with credits)._
 
 ---
 
@@ -27,8 +23,6 @@ _Claude also offers a built-in [Prompt Generator](https://platform.claude.com/da
 Create QR codes instantly.<br>
 No registration, no expiration, 100% free.<br>
 Choose size and color, set error correction level, and download as PNG.
-
-**Status**: Fully Operational
 
 _Created with multiple AIs._
 
@@ -40,8 +34,6 @@ Track Bitcoin price with real-time conversions.<br>
 Convert BTC to SATS, USD, BRL, EUR, and GBP.<br>
 Monitor percentage changes across multiple time periods.
 
-**Status**: Fully Operational
-
 _Created with multiple AIs, optimized with Claude Code._
 
 ---
@@ -51,8 +43,6 @@ _Created with multiple AIs, optimized with Claude Code._
 Calculate the cost of power consumption for common Bitcoin home miners.<br>
 Use manufacturer values or enter your custom values manually.
 
-**Status**: Fully Operational
-
 _Created with multiple AIs._
 
 ---
@@ -60,8 +50,6 @@ _Created with multiple AIs._
 ## [Capital Gains Calculator](https://sugiro.io/stonks/)
 
 Calculate buy and sell operations for US stocks and taxes (Brazil only).
-
-**Status**: Fully Operational
 
 _Created with multiple AIs._
 
