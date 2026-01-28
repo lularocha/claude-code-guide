@@ -21,7 +21,7 @@ Just explain what you need.
 
 ## Be Specific About What You Want
 
-The more detail you provide, the better Claude can help.
+The more detail you provide, the better Claude can help, for example:
 
 **Effective:**
 - "Add form validation to the contact form. Email should be required and validated. Show inline error messages."
