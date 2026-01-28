@@ -14,7 +14,7 @@ Just enter a single term (Seed Word) to generate 12 related terms with clear def
 Create high-quality AI prompts.<br>
 Using the strategy: Context + Persona + Tech Stack + Examples.
 
-_Note: Claude also offers a [Prompt Generator Tool](https://platform.claude.com/dashboard) in the Developer Plataform's Console (requires API account with credits)._
+_Note: Claude has a [Prompt Generator Tool](https://platform.claude.com/dashboard) in the Developer Plataform's Console<br>(requires API account with credits)._
 
 ---
 
