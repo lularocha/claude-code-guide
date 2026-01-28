@@ -3,7 +3,7 @@
 **This site documents my Claude Code learning journey, and it's built with Claude Code itself.<br>
 It's my feedback learning loop: study, practice, learn, document, improve.**
 
-<span class="last-updated">Lastest update: January 26, 2026.</span>
+<span class="last-updated">Lastest update: January 28, 2026.</span>
 
 ## Getting Started
 
