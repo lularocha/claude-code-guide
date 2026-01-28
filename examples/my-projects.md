@@ -24,7 +24,7 @@ _Note: Claude has a [Prompt Generator Tool](https://platform.claude.com/dashboar
 
 Create QR codes instantly.<br>
 No registration, no expiration, 100% free.<br>
-Choose size and color, set error correction level, and download as PNG.
+Includes features like size and color, set error correction level, and download as PNG.
 
 _Created with multiple AIs._
 
