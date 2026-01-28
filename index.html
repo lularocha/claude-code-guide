@@ -688,21 +688,15 @@
                 /* Mobile Layout */
                 .container {
                     flex-direction: column;
-                    height: 100dvh;
+                    height: auto;
+                    min-height: 100dvh;
                 }
 
                 /* Mobile Content Area */
                 .content {
                     width: 100%;
                     max-width: none;
-                    overflow-y: auto;
-                    /* Show scrollbar on mobile */
-                    scrollbar-width: auto;
-                    -ms-overflow-style: auto;
-                }
-
-                .content::-webkit-scrollbar {
-                    display: block;
+                    overflow-y: visible;
                 }
 
                 /* Mobile Markdown Content */
