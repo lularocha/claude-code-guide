@@ -27,6 +27,7 @@ Primary resources for learning Claude Code itself.
 
 - **[Claude Code on the Web](https://code.claude.com/docs/en/claude-code-on-the-web)** — Run Claude on a cloud infrastructure
 - **[Claude Desktop App](https://code.claude.com/docs/en/desktop)** — More user friendly experience
+- **[More options](https://code.claude.com/docs/en/overview)** — Check Outside of the Terminal section
 
 ---
 
