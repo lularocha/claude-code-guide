@@ -37,13 +37,3 @@ A curated list of prominent developers, educators, and thought leaders in the AI
 - **Notable Content**: [Ralph Wiggun Loop explainer video](https://www.youtube.com/watch?v=I7azCAgoUHc)
 - **Description**: Creator of educational content on autonomous AI workflows and Claude Code techniques
 
----
-
-## Writers & Technical Authors
-
-### Joe Njenga
-- **Medium**: [@joe.njenga](https://medium.com/@joe.njenga)
-- **Notable Article**: [Ralph Wiggum: Claude Code's new way to run autonomously](https://medium.com/@joe.njenga/ralph-wiggum-claude-code-new-way-to-run-autonomously-for-hours-without-drama-095f47fbd467)
-- **Description**: Technical deep-dives on Claude Code features and techniques
-
-

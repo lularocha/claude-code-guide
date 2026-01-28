@@ -26,8 +26,8 @@ It's my feedback learning loop: study, practice, learn, document, improve.**
 
 ## Reference
 
-- **[People to Follow](../reference/people.md)** — Claude Code creators and educators
-- **[Resources](../reference/resources.md)** — Official docs and community content
+- **[People to Follow](../reference/people.md)** — Developers and educators
+- **[Resources](../reference/resources.md)** — Docs, courses, and community
 - **[Prompts](../reference/prompts.md)** — General prompting best practices
 
 ---
