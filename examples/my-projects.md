@@ -1,6 +1,6 @@
 # My Projects
 
-A showcase of projects built with Claude Code.
+A showcase of projects built with Claude Code and other AIs.
 
 ## [Glossary Builder](https://sugiro-glossary.vercel.app/)
 
@@ -19,7 +19,7 @@ Using the strategy: Context + Persona + Tech Stack + Examples.
 **Status**: Currently in testing<BR>
 Some features requiring API integration are not yet implemented.
 
-_Note: Claude also offers a built-in [Prompt Generator](https://platform.claude.com/dashboard) in the Console (requires API account with credits)._
+_Claude also offers a built-in [Prompt Generator](https://platform.claude.com/dashboard) in the Console (requires API account with credits)._
 
 ---
 
@@ -31,7 +31,7 @@ Choose size and color, set error correction level, and download as PNG.
 
 **Status**: Fully Operational
 
-_Note: Created with multiple AIs._
+_Created with multiple AIs._
 
 ---
 
@@ -43,6 +43,8 @@ Monitor percentage changes across multiple time periods.
 
 **Status**: Fully Operational
 
+_Created with multiple AIs, optimized with Claude Code_
+
 ---
 
 ## [Hash Cost Calculator](https://sugiro.io/hash/)
@@ -52,6 +54,8 @@ Use manufacturer values or enter your custom values manually.
 
 **Status**: Fully Operational
 
+_Created with multiple AIs._
+
 ---
 
 ## [Capital Gains Calculator](https://sugiro.io/stonks/)
@@ -60,4 +64,6 @@ Calculate buy and sell operations for US stocks and taxes (Brazil only).
 
 **Status**: Fully Operational
 
-_Note: For Brazilian Income Tax only. Always consult a specialized tax accountant._
+_Created with multiple AIs._
+
+_**Important: For Brazilian Income Tax only. Always consult a specialized tax accountant.**_
