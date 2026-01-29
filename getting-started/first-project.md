@@ -1,6 +1,6 @@
 # Create Your First Project
 
-This tutorial is from [Felix Lee](https://x.com/felixleezd) post [**The ultimate guide to vibe-coding for designers**](https://x.com/felixleezd/status/2013654252263219406?s=46&t=xXOubYP77x-93VPw93nVnA). 
+This tutorial is from [**Felix Lee**](https://x.com/felixleezd) post [**The ultimate guide to vibe-coding for designers**](https://x.com/felixleezd/status/2013654252263219406?s=46&t=xXOubYP77x-93VPw93nVnA). 
 
 I strongly recommend reading it (especially the introduction). Felix shares project examples: from easier to more complex. Below I show the first simpler one (Building a Personal Portfolio) that fits the whole purpose of this guide (Learn by Doing). 
 
@@ -19,7 +19,7 @@ You need two tools: Claude Code and Cursor.
 Cursor is an IDE (Integrated Development Environment), where you can create and manage your project's files and folders, write and edit code, and use your AI assistant, all in one window.
 </div>
 
-### Install Claude Code
+### Install Claude Code:
 
 - On Mac, open Terminal and run: `npm install -g @anthropic-ai/claude-code`
 - If you don't have npm, install Node.js first from https://nodejs.org/
@@ -28,7 +28,7 @@ Cursor is an IDE (Integrated Development Environment), where you can create and 
 
 You should see Claude Code launch in your terminal.
 
-### Install Cursor
+### Install Cursor:
 
 Download from https://cursor.com/home and install like any normal app.
 
@@ -64,11 +64,11 @@ dir                       # List files (Windows)
 
 ## Step 3: Build your first project
 
-### Create a project folder
+### Create a project folder:
 
 In Cursor, go to File → Open Folder and create a new empty folder (e.g., my-portfolio). Open the terminal and start Claude Code (by typing: `claude`)
 
-### The Planning Phase (Critical)
+### The Planning Phase (Critical):
 
 Before writing any code, ask for a plan. Here's the sample prompt I use:
 
@@ -98,7 +98,7 @@ If something looks off, tell Claude:
 In my case, using Opus 4.5, the suggested tech was Astro+Tailwind CSS and I accepted the plan with only one change to the last deployment step - you can <a href="https://github.com/lularocha/felix-portfolio/blob/main/plan.md">check out the plan I got in my repo</a>. Note: I have special instructions for Claude in a project level CLAUDE.md file, which means you'll probably get a different plan - that's ok go ahead with it.
 </div>
 
-### Implement
+### Implement:
 
 Once the plan looks good:
 
@@ -128,7 +128,7 @@ Then open:  `http://localhost:3000`
 You might get a different port if you already have a server running on the 3000 port.
 </div>  
 
-### Iterate
+### Iterate:
 
 Now the fun part. Look at your site and give feedback:
 
@@ -146,11 +146,11 @@ Each prompt → code change → refresh browser. The loop is fast.
 
 Think of GitHub like Google Drive for your code and everything you've done in an IDE (like Cursor).
 
-### Create a GitHub account
+### Create a GitHub account:
 
 Go to https://github.com and sign up (free).
 
-### Create a new repository
+### Create a new repository:
 
 Click the + icon → New repository
 
@@ -161,7 +161,7 @@ Click the + icon → New repository
 
 Copy the repository URL, it looks like `https://github.com/yourusername/my-portfolio.git`
 
-### Connect your project
+### Connect your project:
 
 In Claude Code:
 
@@ -174,7 +174,7 @@ git init
 git remote add origin https://github.com/yourusername/my-portfolio.git
 ```
 
-### Create documentation
+### Create documentation:
 
 Tell Claude to:
 
@@ -188,17 +188,17 @@ And also:
 <a href="../advanced/claude-md-guide.md">Check out more info on CLAUDE.md files</a> (It's a must Best Practice using Claude Code).
 </div>
 
-### Commit and push
+### Commit and push:
 
 `Commit all files with the message "Initial commit - portfolio site" and push to GitHub.`
 
 Or manually:
 
 ```
-git add .
+git add 
 git commit -m "Initial commit - portfolio site"
 git push -u origin main
-````
+```
 
 **Your code is now saved online.**
 
@@ -211,7 +211,7 @@ After your site is live (Step 5), the new pushes will auto deploy and the live s
 
 ## Step 5: Deploy and go live
 
-### Create a Vercel account
+### Create a Vercel account:
 
 Go to https://vercel.com and sign up with your GitHub account.
 
@@ -219,7 +219,7 @@ Go to https://vercel.com and sign up with your GitHub account.
 Signing up with GitHub automatically connects your GitHub account to Vercel, allowing Vercel to access your repositories for deployment.
 </div>
 
-### Deploy
+### Deploy:
 
 Option 1: Through Vercel dashboard:
 
