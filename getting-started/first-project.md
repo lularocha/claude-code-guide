@@ -2,7 +2,7 @@
 
 This tutorial is from [**Felix Lee**](https://x.com/felixleezd) post [**The ultimate guide to vibe-coding for designers**](https://x.com/felixleezd/status/2013654252263219406?s=46&t=xXOubYP77x-93VPw93nVnA). 
 
-I strongly recommend reading it (especially the introduction). Felix shares project examples: from easier to more complex. Below I show the first simpler one (Building a Personal Portfolio) that fits the whole purpose of this guide (Learn by Doing). 
+I strongly recommend reading it (especially the introduction). Felix shares project examples: from easier to more complex. Below I show the first simpler one (Building a Personal Portfolio) that fits the whole purpose of this website—Learn by Doing. 
 
 I did it myself and added some personal notes (in yellow).
 
