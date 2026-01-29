@@ -7,7 +7,7 @@ It's my feedback learning loop: study, practice, learn, document, improve.**
 
 ## Getting Started
 
-**Claude Code is an agentic coding tool for your development workflow.**
+**Claude Code is an agentic coding tool for your development workflow. It can see your codebase, create and edit files, and run commands in it.**
 
 1. **[Install](https://code.claude.com/docs/en/quickstart)** — Installation and setup guide
 2. **[Start talking](../getting-started/talking-to-claude.md)** — Effective communication patterns

@@ -126,6 +126,11 @@
                 margin-bottom: 0;
             }
 
+            /* First project page - h3 headers in orange */
+            .content.first-project-page h3 {
+                color: #f60;
+            }
+
             .content p {
                 margin-bottom: 1rem;
             }
@@ -1183,6 +1188,13 @@
                         content.classList.add("examples-page");
                     } else {
                         content.classList.remove("examples-page");
+                    }
+
+                    // Add special class for first project page to style h3 in orange
+                    if (path === "getting-started/first-project.md") {
+                        content.classList.add("first-project-page");
+                    } else {
+                        content.classList.remove("first-project-page");
                     }
                 } catch (error) {
                     markdownContent.innerHTML = `
