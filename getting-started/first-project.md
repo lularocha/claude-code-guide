@@ -90,16 +90,20 @@ Review **plan.md.** Adjust if needed, e.g.:
 
 ### Implement
 
+Ask Claude:
+
 `How do I preview this in my browser? Open in localhost`
 
 Or run:
 
-```
-npx serve
-```
+`npx serve`
 
-Then visit `http://localhost:3000`
-<div class="personal-note">You might get a different port if you already have a server running on this one</div>  
+Then visit:
+
+ `http://localhost:3000`
+<div class="personal-note">
+You might get a different port if you already have a server running on the 3000 port.
+</div>  
 
 ### Iterate
 
@@ -130,6 +134,11 @@ In Claude Code:
 ### Commit and push
 
 `Commit all files with the message "Initial commit - portfolio site" and push to GitHub.`
+
+<div class="personal-note">
+If you make more changes after the Initical Commit, update your Github repository by asking Claude to <code>commit and push</code>.<br><br>
+After your site is live (Step 5), the new pushes will auto deploy and the live site will be automatically updated with your changes.
+</div>
 
 ---
 
