@@ -1,12 +1,23 @@
 # Create Your First Project
 
-Here's the full breakdown with exact commands and prompts for building a personal portfolio website.
+This tutorial is from [Felix Lee](https://x.com/felixleezd) post [**The ultimate guide to vibe-coding for designers**](https://x.com/felixleezd/status/2013654252263219406?s=46&t=xXOubYP77x-93VPw93nVnA). 
+
+I strongly recommend reading it (especially the introduction). Felix shares two project examples: one easy and one more complex. Below I show the first simpler one that fits the whole purpose of this guide (Learn by Doing). 
+
+I did it myself and added some personal notes (in yellow).
 
 ---
+
+## The ultimate guide to vibe-coding for designers
+
+Here's the full breakdown with exact commands and prompts for building a **personal portfolio website**. 
 
 ## Step 1: Set up Cursor & Claude Code
 
 You need two tools: Claude Code and Cursor.
+<div class="personal-note">
+Cursor is an IDE (Integrated Development Environment), where you can create and manage your project's files and folders, write and edit code, and use your AI assistant, all in one window.
+</div>
 
 ### Install Claude Code
 
@@ -17,7 +28,8 @@ You need two tools: Claude Code and Cursor.
 
 ### Install Cursor
 
-Download from https://cursor.com and install like any normal app.
+Download from https://cursor.com/home and install like any normal app.
+
 
 **How they connect:**
 
@@ -33,7 +45,7 @@ Key commands you'll use in the terminal:
 
 ```
 claude                    # Start Claude Code
-cd  # Navigate into a folder
+cd                        # Navigate into a folder
 cd ..                     # Go back one folder
 ls                        # List files (Mac)
 dir                       # List files (Windows)
@@ -52,7 +64,7 @@ dir                       # List files (Windows)
 
 ### Create a project folder
 
-In Cursor, go to File → Open Folder and create a new empty folder (e.g., my-portfolio). Open the terminal and start Claude Code.
+In Cursor, go to File → Open Folder and create a new empty folder (e.g., my-portfolio). Open the terminal and start Claude Code (by typing: `claude`)
 
 ### The Planning Phase (Critical)
 
@@ -72,7 +84,7 @@ Research the best way to build this and create a plan.md file with:
 4. Step-by-step implementation plan
 ```
 
-Review plan.md. Adjust if needed, e.g.:
+Review **plan.md.** Adjust if needed, e.g.:
 
 `In the plan, change the tech stack to use vanilla HTML/CSS instead of React. Keep it simple.`
 
@@ -86,7 +98,8 @@ Or run:
 npx serve
 ```
 
-Then visit http://localhost:3000
+Then visit `http://localhost:3000`
+<div class="personal-note">You might get a different port if you already have a server running on this one</div>  
 
 ### Iterate
 
@@ -126,22 +139,35 @@ In Claude Code:
 
 Sign up at https://vercel.com with GitHub.
 
+<div class="personal-note">
+Signing up with GitHub automatically connects your GitHub account to Vercel, allowing Vercel to access your repositories for deployment.
+</div>
+
 ### Deploy
 
-Import your repo in the Vercel dashboard and click Deploy, or in Claude Code:
+Import your repo in the Vercel dashboard and click Deploy,
+<div class="personal-note">
+Click the Add New button, select Project, and import your Git repository.
+</div> 
+
+or in Claude Code:
 
 `Deploy this project to Vercel.`
 
-Vercel provides a live URL. Future pushes auto-deploy.
+Vercel provides a live URL. 
+
+Future pushes auto-deploy.
 
 ---
 
 ## Step 6: Add a Custom Domain
 
-Buy a domain (e.g., via Vercel or Namecheap).
+### Buy a domain 
+(e.g., via Vercel or Namecheap).
 
-Connect in Vercel: Go to Settings → Domains, add your domain, and follow DNS instructions (e.g., A record to 76.76.21.21, CNAME for www).
+### Connect in Vercel: 
+Go to Settings → Domains, add your domain, and follow DNS instructions (e.g., A record to 76.76.21.21, CNAME for www).
 
 Wait for propagation, then your site loads on the custom domain.
 
-This completes the hands-on workflow for your first portfolio site!
+### This completes the hands-on workflow for your first portfolio site!
