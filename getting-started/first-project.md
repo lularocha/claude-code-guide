@@ -2,7 +2,7 @@
 
 This tutorial is from [Felix Lee](https://x.com/felixleezd) post [**The ultimate guide to vibe-coding for designers**](https://x.com/felixleezd/status/2013654252263219406?s=46&t=xXOubYP77x-93VPw93nVnA). 
 
-I strongly recommend reading it (especially the introduction). Felix shares two project examples: one easy and one more complex. Below I show the first simpler one that fits the whole purpose of this guide (Learn by Doing). 
+I strongly recommend reading it (especially the introduction). Felix shares project examples: from easier to more complex. Below I show the first simpler one (Building a Personal Portfolio) that fits the whole purpose of this guide (Learn by Doing). 
 
 I did it myself and added some personal notes (in yellow).
 
@@ -25,6 +25,8 @@ Cursor is an IDE (Integrated Development Environment), where you can create and 
 - If you don't have npm, install Node.js first from https://nodejs.org/
 - On Windows, use the native installer from Anthropic's website
 - After installation, verify it works by typing: `claude`
+
+You should see Claude Code launch in your terminal.
 
 ### Install Cursor
 
@@ -68,7 +70,7 @@ In Cursor, go to File → Open Folder and create a new empty folder (e.g., my-po
 
 ### The Planning Phase (Critical)
 
-Use this prompt:
+Before writing any code, ask for a plan. Here's the sample prompt I use:
 
 ```
 I want to build a personal portfolio website with:
@@ -84,30 +86,51 @@ Research the best way to build this and create a plan.md file with:
 4. Step-by-step implementation plan
 ```
 
-Review **plan.md.** Adjust if needed, e.g.:
+Claude Code will create a plan.md file in your project. Open it in Cursor and review it.
+
+### Approve or Adjust:
+
+If something looks off, tell Claude:
 
 `In the plan, change the tech stack to use vanilla HTML/CSS instead of React. Keep it simple.`
 
+<div class="personal-note">
+In my case, using Opus 4.5, the suggested tech was Astro+Tailwind CSS and I accepted the plan with only one change to the last deployment step - you can <a href="https://github.com/lularocha/felix-portfolio/blob/main/plan.md">check out the plan I got in my repo</a>. Note: I have special instructions for Claude in a project level CLAUDE.md file, which means you'll probably get a different plan - that's ok go ahead with it.
+</div>
+
 ### Implement
+
+Once the plan looks good:
+
+Implement this project according to plan.md. Start with the HTML structure, then add CSS styling.
+
+<div class="personal-note">
+Tell Claude to: <code>Start building</code> or <code>Implement the plan</code>
+</div>
+
+Watch as files appear in your file tree: index.html, styles.css, maybe an images folder.
+
+### Preview Locally:
 
 Ask Claude:
 
 `How do I preview this in my browser? Open in localhost`
 
-Or run:
+It will either open a local server or tell you to simply open index.html in your browser.
+
+For a proper local server, you can run:
 
 `npx serve`
 
-Then visit:
+Then open:  `http://localhost:3000`
 
- `http://localhost:3000`
 <div class="personal-note">
 You might get a different port if you already have a server running on the 3000 port.
 </div>  
 
 ### Iterate
 
-Give feedback like:
+Now the fun part. Look at your site and give feedback:
 
 - Make the hero section full-height (100vh). Center the text vertically.
 - The projects section looks cramped. Add more padding between cards — at least 32px.
@@ -115,25 +138,69 @@ Give feedback like:
 - Change the font to Inter from Google Fonts.
 - Make it responsive. On mobile, stack the project cards vertically.
 
-Refresh the browser after each change.
+Each prompt → code change → refresh browser. The loop is fast.
 
 ---
 
 ## Step 4: Save your work with GitHub
 
-### Create a GitHub repository
+Think of GitHub like Google Drive for your code and everything you've done in an IDE (like Cursor).
 
-Sign up at https://github.com and create a new repo (e.g., my-portfolio), and copy the URL.
+### Create a GitHub account
 
-### Connect and push
+Go to https://github.com and sign up (free).
+
+### Create a new repository
+
+Click the + icon → New repository
+
+- Name it (e.g., my-portfolio)
+- Keep it Public or Private (your choice)
+- Don't initialize with README (we'll create our own)
+- Click Create repository
+
+Copy the repository URL, it looks like `https://github.com/yourusername/my-portfolio.git`
+
+### Connect your project
 
 In Claude Code:
 
 `Initialize git in this project and connect it to my GitHub repository: https://github.com/yourusername/my-portfolio.git`
 
+Or manually:
+
+```
+git init
+git remote add origin https://github.com/yourusername/my-portfolio.git
+```
+
+### Create documentation
+
+Tell Claude to:
+
+`Create a README.md that explains what this project is, what it does, and how to run it locally.`
+
+And also:
+
+`Create a CLAUDE.md file that describes the project architecture, my preferences for code style, and context for future sessions.`
+
+<div class="personal-note">
+<a href="../advanced/claude-md-guide.md">Check out more info on CLAUDE.md files</a> (It's a must Best Practice using Claude Code).
+</div>
+
 ### Commit and push
 
 `Commit all files with the message "Initial commit - portfolio site" and push to GitHub.`
+
+Or manually:
+
+```
+git add .
+git commit -m "Initial commit - portfolio site"
+git push -u origin main
+````
+
+**Your code is now saved online.**
 
 <div class="personal-note">
 If you make more changes after the Initical Commit, update your Github repository by asking Claude to <code>commit and push</code>.<br><br>
@@ -146,7 +213,7 @@ After your site is live (Step 5), the new pushes will auto deploy and the live s
 
 ### Create a Vercel account
 
-Sign up at https://vercel.com with GitHub.
+Go to https://vercel.com and sign up with your GitHub account.
 
 <div class="personal-note">
 Signing up with GitHub automatically connects your GitHub account to Vercel, allowing Vercel to access your repositories for deployment.
@@ -154,29 +221,74 @@ Signing up with GitHub automatically connects your GitHub account to Vercel, all
 
 ### Deploy
 
-Import your repo in the Vercel dashboard and click Deploy,
-<div class="personal-note">
-Click the Add New button, select Project, and import your Git repository.
-</div> 
+Option 1: Through Vercel dashboard:
 
-or in Claude Code:
+- Click Add New → Project
+- Import your GitHub repository
+- Click Deploy
+
+Option 2: Through Claude Code:
 
 `Deploy this project to Vercel.`
 
-Vercel provides a live URL. 
+This one is straightforward, if you connect that repo to Vercel, it just deploys automatically when you commit (after your first time).
+It will walk you through authentication and deployment.
 
-Future pushes auto-deploy.
+**Result:**
+
+Vercel gives you a live URL like my-portfolio-abc123.vercel.app
+
+Your site is now on the internet. Share it with anyone.
+
+Automatic updates:
+From now on, every time you push to GitHub, Vercel automatically redeploys. Your live site always matches your latest code.
 
 ---
 
 ## Step 6: Add a Custom Domain
 
-### Buy a domain 
-(e.g., via Vercel or Namecheap).
+### Buy a domain:
 
-### Connect in Vercel: 
-Go to Settings → Domains, add your domain, and follow DNS instructions (e.g., A record to 76.76.21.21, CNAME for www).
+Options:
 
-Wait for propagation, then your site loads on the custom domain.
+- Directly in Vercel (easiest — auto-configures everything)
+- From Namecheap, Google Domains, Cloudflare, etc.
 
-### This completes the hands-on workflow for your first portfolio site!
+### Connect to Vercel:
+
+In your Vercel project dashboard:
+1. Go to Settings → Domains
+2. Add your domain (e.g., felixlee.dev)
+3. Vercel shows you DNS records to add
+
+Update DNS (if you bought elsewhere):
+
+Go to your domain provider's DNS settings and add:
+```
+Type: A
+Name: @
+Value: 76.76.21.21
+
+Type: CNAME
+Name: www
+Value: cname.vercel-dns.com
+````
+
+Wait 5-30 minutes for DNS propagation.
+
+ALWAYS Verify: Visit your custom domain. Your site should load.
+
+---
+## Going further: Building real web apps
+
+The next step in Felix's tutorial is to add advanced features to the portfolio like user authentication, AI chat, and a comment system. 
+
+[Check the post for more](https://x.com/felixleezd/status/2013654252263219406) starting at Step 7: Pan a Web App.
+
+---
+
+## My Project documentation
+
+You can checkout the whole code I created with this tutorial in my [Felix Portfolio repo](https://github.com/lularocha/felix-portfolio/tree/main)
+
+For more tips and insights take a look at [my-docs folder](https://github.com/lularocha/felix-portfolio/tree/main/my-docs) to see my Initial Prompt and Implementation Notes.
