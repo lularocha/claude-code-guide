@@ -185,7 +185,7 @@ And also:
 `Create a CLAUDE.md file that describes the project architecture, my preferences for code style, and context for future sessions.`
 
 <div class="personal-note">
-<a href="../advanced/claude-md-guide.md">Check out more info on CLAUDE.md files</a> (It's a must Best Practice using Claude Code).
+<a href="../advanced/claude-md-guide.md">Check out more info on CLAUDE.md files</a>
 </div>
 
 ### Commit and push:
@@ -272,7 +272,7 @@ Value: 76.76.21.21
 Type: CNAME
 Name: www
 Value: cname.vercel-dns.com
-````
+```
 
 Wait 5-30 minutes for DNS propagation.
 
