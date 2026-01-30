@@ -3,7 +3,7 @@
 **This site documents my Claude Code learning journey, and it's built with Claude Code itself.<br>
 It's my feedback learning loop: study, practice, learn, document, improve.**
 
-<span class="last-updated">Lastest update: January 28, 2026.</span>
+<span class="last-updated">Lastest update: January 30, 2026.</span>
 
 ## Getting Started
 
@@ -11,6 +11,7 @@ It's my feedback learning loop: study, practice, learn, document, improve.**
 
 1. **[Install](https://code.claude.com/docs/en/quickstart)** — Installation and setup guide
 2. **[Start talking](../getting-started/talking-to-claude.md)** — Effective communication patterns
+3. **[Create Your First Project](../getting-started/first-project.md)** — Personal Portfolio
 
 ---
 
