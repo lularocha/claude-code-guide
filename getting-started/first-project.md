@@ -95,7 +95,7 @@ If something looks off, tell Claude:
 `In the plan, change the tech stack to use vanilla HTML/CSS instead of React. Keep it simple.`
 
 <div class="personal-note">
-In my case, using Opus 4.5, the suggested tech was Astro+Tailwind CSS and I accepted the plan with only one change to the last deployment step - you can <a href="https://github.com/lularocha/felix-portfolio/blob/main/plan.md">check out the plan I got in my repo</a>. Note: I have special instructions for Claude in a project level CLAUDE.md file, which means you'll probably get a different plan - that's ok go ahead with it.
+In my case, using Opus 4.5, the suggested tech was Astro+Tailwind CSS and I accepted the plan with only one change to the last deployment step - you can <a href="https://github.com/lularocha/felix-portfolio/blob/main/plan.md">check out the plan I got in my repo</a>. Note: I have special instructions for Claude in a project level CLAUDE.md file, which means you'll probably get a different plan - that's ok, go ahead with yours.
 </div>
 
 ### Implement:
@@ -125,7 +125,7 @@ For a proper local server, you can run:
 Then open:  `http://localhost:3000`
 
 <div class="personal-note">
-You might get a different port if you already have a server running on the 3000 port.
+Depending on the Tech Stack you might need to use different commands to run the local server and you also might get a different port, so it might be easier if you just ask Claude to <code>run local server</code>.
 </div>  
 
 ### Iterate:
