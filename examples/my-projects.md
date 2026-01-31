@@ -16,7 +16,7 @@ Create high-quality AI prompts.<br>
 Using the strategy: System Prompt + User Prompt.<br>
 Includes Agent Analysis that extracts patterns from images to suggest prompt specifications.
 
-_Note: Claude has a [Prompt Generator Tool](https://platform.claude.com/dashboard) in the Developer Plataform's Console<br>(requires API account with credits)._
+_Claude has a [Prompt Generator Tool](https://platform.claude.com/dashboard) in the Developer Plataform's Console<br>(requires API account with credits)._
 
 ---
 
