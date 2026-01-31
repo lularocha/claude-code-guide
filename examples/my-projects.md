@@ -20,6 +20,12 @@ _Note: Claude has a [Prompt Generator Tool](https://platform.claude.com/dashboar
 
 ---
 
+## [Personal Portfolio](https://rockfelix.vercel.app/)
+
+Done with Felix Lee's tutorial. Check out the [Create Your First Project](../getting-started/first-project.md) page for more details.
+
+---
+
 ## [QR Code Generator](https://sugiro.io/qrcode/)
 
 Create QR codes instantly.<br>
