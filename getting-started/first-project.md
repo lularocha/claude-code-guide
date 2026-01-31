@@ -287,7 +287,7 @@ ALWAYS Verify: Visit your custom domain. Your site should load.
 
 The next step in Felix's tutorial is to add advanced features to the portfolio like user authentication, AI chat, and a comment system. 
 
-[Check the post for more](https://x.com/felixleezd/status/2013654252263219406) starting at Step 7: Pan a Web App.
+[Check the post for more](https://x.com/felixleezd/status/2013654252263219406) starting at Step 7: Plan a Web App.
 
 ---
 
