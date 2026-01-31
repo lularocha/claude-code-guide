@@ -15,6 +15,14 @@ Frame instructions positively ("Write in flowing prose") rather than negatively 
 
 ---
 
+## Advanced Prompt Technique
+
+Use a two-level structure strategy with System Prompt and User Prompt.
+
+Check out my [Prompt Builder Tool](https://sugiro-prompt.vercel.app/)
+
+---
+
 ## Courses
 
 ### [Anthropic Academy](https://www.anthropic.com/learn)
