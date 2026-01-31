@@ -4,9 +4,11 @@ This tutorial is from [**Felix Lee**](https://x.com/felixleezd) post [**The ulti
 
 I strongly recommend reading it (especially the introduction). Felix shares project examples: from easier to more complex. The following instructions are for the first simpler one (Building a Personal Portfolio) that fits the whole purpose of this website—Learn by Doing. 
 
-I did it myself and added some personal notes (in yellow).
+I did it myself. Check out [My Personal Portfolio](https://rockfelix.vercel.app/) done for testing the tutorial.
 
 ---
+
+From Felix Lee’s original post + my notes in yellow:
 
 ## The ultimate guide to vibe-coding for designers
 
