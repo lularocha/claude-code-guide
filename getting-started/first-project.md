@@ -203,7 +203,7 @@ git push -u origin main
 **Your code is now saved online.**
 
 <div class="personal-note">
-If you make more changes after the Initial Commit, update your Github repository by asking Claude to <code>commit and push</code>.<br><br>
+If you make more changes after the Initial Commit, update your Github repository by asking Claude to <code>commit and push (Your commit message)</code>.<br><br>
 After your site is live (Step 5), the new pushes will auto deploy and the live site will be automatically updated with your changes.
 </div>
 
