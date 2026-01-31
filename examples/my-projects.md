@@ -6,7 +6,7 @@ A showcase of projects built with Claude Code and other AIs.
 
 Build glossaries powered by Claude AI.<br> 
 Just enter a single term (Seed Word) to generate 12 related terms with clear definitions.<br>
-Includes Learn More feature that expands a term definition and adds sources and links.<br>
+Includes Learn More feature that expands a term definition, adding sources and links.<br>
 
 ---
 
