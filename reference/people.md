@@ -1,7 +1,5 @@
 # AI People
 
-A curated list of prominent developers, educators, and thought leaders in the AI and Claude Code space.
-
 ## Developers & Engineers
 
 ### Boris Cherny
