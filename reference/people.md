@@ -20,7 +20,7 @@
 
 ### Felix Lee
 - **Twitter**: [@felixleezd](https://x.com/felixleezd)
-- **Notable Content**: [The ultimate guide to vibe-coding for designers](https://x.com/felixleezd/status/2013654252263219406)
+- **Notable Content**: [The ultimate guide to vibe-coding for designers](../getting-started/first-project.md)
 - **Description**: Practical AI-assisted development workflows for designers and builders
 
 ### Alex Finn
