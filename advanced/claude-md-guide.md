@@ -22,20 +22,41 @@ I'm using a two-level structure for my CLAUDE.md files:
 
 Claude reads both files, with project-specific instructions taking precedence when relevant.
 
-## Top-level CLAUDE.md 
+## Top-level CLAUDE.md
 
 These are the instructions I'm experimenting with:
 
+```markdown
+# Claude Code Instructions
+
+<!-- Universal rules applied to all projects in this workspace -->
+
+## General Guidelines
 1. Think through problems, read the codebase first
-2. Check in before major changes
-3. Ask clarifying questions
-4. Give high-level explanations of changes
-5. Keep changes simple and minimal
-6. Maintain architecture documentation
-7. Never speculate about unread code
-8. Read relevant files before answering codebase questions
-9. Give grounded, hallucination-free answers
-10. Run tests after making changes to verify nothing broke
+2. Ask clarifying questions
+3. Give grounded, hallucination-free answers
+4. Never speculate about unread code
+5. Read relevant files before answering codebase questions
+
+## Development Workflow
+1. Check in before major changes
+2. Keep changes simple and minimal
+3. Give high-level explanations of changes
+4. When in plan mode, always suggest the simpler approach first
+
+## Quality Assurance
+1. Run tests after making changes to verify nothing broke
+2. Maintain architecture documentation in the project's README.md file
+
+## Git Workflow
+1. Never commit or push sensitive information (API keys, secrets, credentials, passwords)
+2. Always review staged changes before committing to check for sensitive data
+3. Ensure .gitignore is properly configured in every project with:
+   - .DS_Store and OS-specific files
+   - .env and .env.local files
+   - *.pem and other key files
+   - Any project-specific secret/config files
+```
 
 ## Project-specific CLAUDE.md 
 
