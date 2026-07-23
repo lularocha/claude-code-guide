@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -125,57 +125,32 @@
         color: #888;
       }
 
-      .topnav {
-        display: flex;
-        gap: 1.25rem;
+      /* Language switcher */
+      .lang-switch {
+        display: inline-flex;
+        background: #ececec;
+        border-radius: 999px;
+        padding: 3px;
       }
 
-      .topnav a {
-        text-decoration: none;
-        color: #333;
-        font-weight: 600;
-        font-size: 0.9rem;
-      }
-
-      .topnav a:hover {
-        color: #f60;
-      }
-
-      /* Hamburger button (mobile only) */
-      #hamburger {
-        display: none;
-        flex-direction: column;
-        justify-content: center;
-        gap: 5px;
-        width: 40px;
-        height: 40px;
-        padding: 8px;
-        background: none;
+      .lang-switch button {
         border: none;
+        background: none;
         cursor: pointer;
-      }
-
-      #hamburger span {
-        display: block;
-        width: 100%;
-        height: 2px;
-        background: #333;
-        border-radius: 2px;
+        font-family: inherit;
+        font-weight: 700;
+        font-size: 0.8rem;
+        padding: 5px 14px;
+        border-radius: 999px;
+        color: #555;
         transition:
-          transform 0.25s ease,
-          opacity 0.25s ease;
+          background 0.2s ease,
+          color 0.2s ease;
       }
 
-      #hamburger.open span:nth-child(1) {
-        transform: translateY(7px) rotate(45deg);
-      }
-
-      #hamburger.open span:nth-child(2) {
-        opacity: 0;
-      }
-
-      #hamburger.open span:nth-child(3) {
-        transform: translateY(-7px) rotate(-45deg);
+      .lang-switch button.active {
+        background: #f80;
+        color: #fff;
       }
 
       /* Content wrapper */
@@ -359,29 +334,6 @@
         .topbar {
           padding: 0.6rem 1rem;
         }
-        #hamburger {
-          display: flex;
-        }
-        .topnav {
-          display: none;
-          position: absolute;
-          top: 100%;
-          left: 0;
-          width: 100%;
-          flex-direction: column;
-          gap: 0;
-          background: #fff;
-          border-bottom: 1px solid #eee;
-          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.06);
-        }
-        .topnav.open {
-          display: flex;
-        }
-        .topnav a {
-          padding: 0.9rem 1rem;
-          border-top: 1px solid #f0f0f0;
-          font-size: 1rem;
-        }
         h2.section-title {
           font-size: 1.6rem;
         }
@@ -395,91 +347,90 @@
         <span class="h1cc">Claude Code</span>
         <span class="h1bp">Guide</span>
       </div>
-      <button id="hamburger" aria-label="Menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <nav class="topnav" id="topnav">
-        <a href="#install">Install Claude Code</a>
-        <a href="#build">Build Something</a>
-        <a href="#people">Learn More</a>
-        <a href="#more">My Projects</a>
-      </nav>
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button type="button" data-lang="en">EN</button>
+        <button type="button" data-lang="pt">BR</button>
+      </div>
     </div>
 
     <main id="top">
       <!-- ================= INSTALL CLAUDE CODE ================= -->
       <section id="install">
-        <h2 class="section-title">Install Claude Code</h2>
+        <h2 class="section-title" data-i18n="install_title">
+          Instale o Claude Code
+        </h2>
 
-        <p>
+        <p data-i18n="install_lead">
           <strong
-            >Claude Code is an agentic coding tool for your development
-            workflow. It can see your codebase, create and edit files, and run
-            commands in it.</strong
+            >O Claude Code é uma ferramenta de programação com agentes para o
+            seu fluxo de desenvolvimento. Ele enxerga o seu código, cria e edita
+            arquivos e executa comandos nele.</strong
           >
         </p>
 
         <ul>
-          <li>
-            On Mac, open Terminal and run:
+          <li data-i18n="install_li1">
+            No Mac, abra o Terminal e execute:
             <code>npm install -g @anthropic-ai/claude-code</code>
           </li>
-          <li>
-            If you don't have npm, install Node.js first from
+          <li data-i18n="install_li2">
+            Se você não tem o npm, instale primeiro o Node.js em
             <a href="https://nodejs.org/">nodejs.org</a>
           </li>
-          <li>On Windows, use the native installer from Anthropic's website</li>
-          <li>
-            After installation, verify it works by typing:
+          <li data-i18n="install_li3">
+            No Windows, use o instalador nativo do site da Anthropic
+          </li>
+          <li data-i18n="install_li4">
+            Após a instalação, verifique se funciona digitando:
             <code>claude</code>
           </li>
         </ul>
-        <p>
-          See the official
+        <p data-i18n="install_docs">
+          Veja o
           <a href="https://code.claude.com/docs/en/quickstart"
-            >Installation &amp; Setup guide</a
+            >guia oficial de instalação e configuração</a
           >
-          for full details.
+          para todos os detalhes.
         </p>
       </section>
 
       <!-- ================= BUILD SOMETHING ================= -->
       <section id="build">
-        <h2 class="section-title">Build Something</h2>
+        <h2 class="section-title" data-i18n="build_title">Construa Algo</h2>
         <ul>
-          <li>Create a project folder.</li>
-          <li>
-            Point Claude to the folder — open a terminal window at that folder
-            and start Claude by typing <code>claude</code>.
+          <li data-i18n="build_li1">Crie uma pasta para o projeto.</li>
+          <li data-i18n="build_li2">
+            Abra uma janela de terminal nessa pasta e inicie o Claude digitando
+            <code>claude</code>.
           </li>
-          <li>Ask Claude to build something.</li>
+          <li data-i18n="build_li3">Peça ao Claude para construir algo.</li>
         </ul>
-        <div class="personal-note">
-          Not sure what to ask for? You can use my
-          <a href="https://prompt.sugiro.ai/">Prompt Builder tool</a> to craft a
-          clear, detailed prompt.
+        <div class="personal-note" data-i18n="build_note">
+          Não sabe o que pedir? Você pode usar a minha
+          <a href="https://prompt.sugiro.ai/">ferramenta Prompt Builder</a> para
+          criar um prompt claro e detalhado.
         </div>
       </section>
 
-      <!-- ================= LEARN FROM PEOPLE ================= -->
+      <!-- ================= LEARN MORE ================= -->
       <section id="people">
-        <h2 class="section-title">Learn More</h2>
+        <h2 class="section-title" data-i18n="learn_title">Saiba Mais</h2>
 
-        <p>Follow experienced people, here is a starting point:</p>
+        <p data-i18n="learn_lead">
+          Siga pessoas experientes, você pode começar com:
+        </p>
 
         <ul class="people">
           <li>
-            <span class="name">Matt Pocock</span> —
+            <span class="name">Matt Pocock</span>
             <a href="https://x.com/mattpocockuk">@mattpocockuk</a>
           </li>
           <li>
-            <span class="name">Andrej Karpathy</span> —
+            <span class="name">Andrej Karpathy</span>
             <a href="https://x.com/karpathy">@karpathy</a>
           </li>
           <li>
-            <span class="name">Boris Cherny</span> —
+            <span class="name">Boris Cherny</span>
             <a href="https://x.com/bcherny">@bcherny</a>
           </li>
         </ul>
@@ -487,37 +438,103 @@
 
       <!-- ================= MY PROJECTS ================= -->
       <section id="more">
-        <h2 class="section-title">My Projects</h2>
-        <p>
-          A showcase of projects built with Claude Code and other AIs:
+        <h2 class="section-title" data-i18n="projects_title">Meus Projetos</h2>
+        <p data-i18n="projects_lead">
+          Uma vitrine de projetos construídos com o Claude Code e outras IAs:
           <a href="https://sugiro.ai/ai-projects">sugiro.ai/ai-projects</a>
         </p>
       </section>
     </main>
 
     <footer>
-      <div class="footer-title">
-        Developed by Lula Rocha / <a href="https://sugiro.ai/">sugiro.ai</a>
+      <div class="footer-title" data-i18n="footer">
+        Desenvolvido por Lula Rocha / <a href="https://sugiro.ai/">sugiro.ai</a>
       </div>
     </footer>
 
     <script>
-      // Mobile hamburger menu
-      const hamburger = document.getElementById("hamburger");
-      const topnav = document.getElementById("topnav");
-      function closeMenu() {
-        hamburger.classList.remove("open");
-        topnav.classList.remove("open");
-        hamburger.setAttribute("aria-expanded", "false");
+      const translations = {
+        en: {
+          install_title: "Install Claude Code",
+          install_lead:
+            "<strong>Claude Code is an agentic coding tool for your development workflow. It can see your codebase, create and edit files, and run commands in it.</strong>",
+          install_li1:
+            "On Mac, open Terminal and run: <code>npm install -g @anthropic-ai/claude-code</code>",
+          install_li2:
+            'If you don\'t have npm, install Node.js first from <a href="https://nodejs.org/">nodejs.org</a>',
+          install_li3:
+            "On Windows, use the native installer from Anthropic's website",
+          install_li4:
+            "After installation, verify it works by typing: <code>claude</code>",
+          install_docs:
+            'See the official <a href="https://code.claude.com/docs/en/quickstart">Installation &amp; Setup guide</a> for full details.',
+          build_title: "Build Something",
+          build_li1: "Create a project folder.",
+          build_li2:
+            "Open a terminal window at that folder and start Claude by typing <code>claude</code>.",
+          build_li3: "Ask Claude to build something.",
+          build_note:
+            'Not sure what to ask for? You can use my <a href="https://prompt.sugiro.ai/">Prompt Builder tool</a> to craft a clear, detailed prompt.',
+          learn_title: "Learn More",
+          learn_lead: "Follow experienced people, you can start with:",
+          projects_title: "My Projects",
+          projects_lead:
+            'A showcase of projects built with Claude Code and other AIs: <a href="https://sugiro.ai/ai-projects">sugiro.ai/ai-projects</a>',
+          footer:
+            'Developed by Lula Rocha / <a href="https://sugiro.ai/">sugiro.ai</a>',
+        },
+        pt: {
+          install_title: "Instale o Claude Code",
+          install_lead:
+            "<strong>O Claude Code é uma ferramenta de programação com agentes para o seu fluxo de desenvolvimento. Ele enxerga o seu código, cria e edita arquivos e executa comandos nele.</strong>",
+          install_li1:
+            "No Mac, abra o Terminal e execute: <code>npm install -g @anthropic-ai/claude-code</code>",
+          install_li2:
+            'Se você não tem o npm, instale primeiro o Node.js em <a href="https://nodejs.org/">nodejs.org</a>',
+          install_li3:
+            "No Windows, use o instalador nativo do site da Anthropic",
+          install_li4:
+            "Após a instalação, verifique se funciona digitando: <code>claude</code>",
+          install_docs:
+            'Veja o <a href="https://code.claude.com/docs/en/quickstart">guia oficial de instalação e configuração</a> para todos os detalhes.',
+          build_title: "Construa Algo",
+          build_li1: "Crie uma pasta para o projeto.",
+          build_li2:
+            "Abra uma janela de terminal nessa pasta e inicie o Claude digitando <code>claude</code>.",
+          build_li3: "Peça ao Claude para construir algo.",
+          build_note:
+            'Não sabe o que pedir? Você pode usar a minha <a href="https://prompt.sugiro.ai/">ferramenta Prompt Builder</a> para criar um prompt claro e detalhado.',
+          learn_title: "Saiba Mais",
+          learn_lead: "Siga pessoas experientes, você pode começar com:",
+          projects_title: "Meus Projetos",
+          projects_lead:
+            'Uma vitrine de projetos construídos com o Claude Code e outras IAs: <a href="https://sugiro.ai/ai-projects">sugiro.ai/ai-projects</a>',
+          footer:
+            'Desenvolvido por Lula Rocha / <a href="https://sugiro.ai/">sugiro.ai</a>',
+        },
+      };
+
+      const buttons = document.querySelectorAll(".lang-switch button");
+
+      function setLang(lang) {
+        const dict = translations[lang];
+        if (!dict) return;
+        document.querySelectorAll("[data-i18n]").forEach((el) => {
+          const key = el.getAttribute("data-i18n");
+          if (dict[key]) el.innerHTML = dict[key];
+        });
+        document.documentElement.lang = lang === "pt" ? "pt-BR" : "en";
+        buttons.forEach((b) =>
+          b.classList.toggle("active", b.dataset.lang === lang),
+        );
+        localStorage.setItem("lang", lang);
       }
-      hamburger.addEventListener("click", () => {
-        const open = hamburger.classList.toggle("open");
-        topnav.classList.toggle("open", open);
-        hamburger.setAttribute("aria-expanded", open ? "true" : "false");
-      });
-      topnav.addEventListener("click", (e) => {
-        if (e.target.tagName === "A") closeMenu();
-      });
+
+      buttons.forEach((b) =>
+        b.addEventListener("click", () => setLang(b.dataset.lang)),
+      );
+
+      setLang(localStorage.getItem("lang") || "pt");
     </script>
   </body>
 </html>
