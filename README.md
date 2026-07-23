@@ -6,11 +6,12 @@ A beginner-focused learning resource for Claude Code—the command-line tool tha
 
 This site documents my Claude Code learning journey, and it's built with Claude Code itself. It's my feedback learning loop: study, practice, learn, document, improve.
 
-It's a single-page site (`index.html`) with three sections:
+It's a single-page site (`index.html`) with four sections:
 
-- **Getting Started** — Install, how to talk to Claude Code, and create your first project
-- **People** — Developers and educators to follow
-- **More** — A showcase of projects built with Claude Code
+- **Install Claude Code** — How to install and start Claude Code
+- **Build Something** — A simple first-project workflow
+- **Learn More** — Experienced people to follow
+- **My Projects** — A showcase of projects built with Claude Code
 
 ## View the Site
 
@@ -31,4 +32,4 @@ All content references official Claude Code documentation:
 
 ---
 
-**Lula Rocha + Claude**
+Developed by **Lula Rocha** / [sugiro.ai](https://sugiro.ai/)

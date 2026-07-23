@@ -24,7 +24,7 @@
     />
     <meta
       property="og:image"
-      content="https://ccguide.vercel.app/viewer/images/favicon-cg.png"
+      content="https://ccguide.vercel.app/favicon-cg.png"
     />
     <meta property="og:site_name" content="Claude Code Guide" />
 
@@ -38,13 +38,13 @@
     />
     <meta
       name="twitter:image"
-      content="https://ccguide.vercel.app/viewer/images/favicon-cg.png"
+      content="https://ccguide.vercel.app/favicon-cg.png"
     />
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://ccguide.vercel.app/" />
 
-    <link rel="icon" type="image/png" href="viewer/images/favicon-cg.png" />
+    <link rel="icon" type="image/png" href="favicon-cg.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -107,13 +107,13 @@
 
       .brand .h1cc {
         font-weight: 700;
-        font-size: 1.15rem;
+        font-size: 2rem;
         letter-spacing: -0.5px;
       }
 
       .brand .h1bp {
         font-weight: 700;
-        font-size: 1.15rem;
+        font-size: 2rem;
         color: #f60;
         letter-spacing: -0.5px;
       }
@@ -139,6 +139,43 @@
 
       .topnav a:hover {
         color: #f60;
+      }
+
+      /* Hamburger button (mobile only) */
+      #hamburger {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        width: 40px;
+        height: 40px;
+        padding: 8px;
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+
+      #hamburger span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: #333;
+        border-radius: 2px;
+        transition:
+          transform 0.25s ease,
+          opacity 0.25s ease;
+      }
+
+      #hamburger.open span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+
+      #hamburger.open span:nth-child(2) {
+        opacity: 0;
+      }
+
+      #hamburger.open span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
       }
 
       /* Content wrapper */
@@ -311,53 +348,39 @@
 
       footer .footer-title {
         font-weight: 600;
-        font-size: 1rem;
+        font-size: 13px;
       }
 
       footer .footer-title a {
-        color: inherit;
-      }
-
-      footer .footer-description {
-        font-size: 0.9rem;
-        color: #666;
-        margin-top: 0.25rem;
-      }
-
-      /* Scroll to top */
-      #scroll-to-top {
-        position: fixed;
-        bottom: 2rem;
-        right: 2rem;
-        width: 48px;
-        height: 48px;
-        background: #f80;
-        color: #fff;
-        border: none;
-        border-radius: 50%;
-        font-size: 1.4rem;
-        line-height: 1;
-        cursor: pointer;
-        display: none;
-        align-items: center;
-        justify-content: center;
-        z-index: 1000;
-      }
-
-      #scroll-to-top.visible {
-        display: flex;
-      }
-
-      #scroll-to-top:hover {
-        background: #f60;
+        color: #f60;
       }
 
       @media (max-width: 600px) {
         .topbar {
           padding: 0.6rem 1rem;
         }
+        #hamburger {
+          display: flex;
+        }
         .topnav {
-          gap: 0.9rem;
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100%;
+          flex-direction: column;
+          gap: 0;
+          background: #fff;
+          border-bottom: 1px solid #eee;
+          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.06);
+        }
+        .topnav.open {
+          display: flex;
+        }
+        .topnav a {
+          padding: 0.9rem 1rem;
+          border-top: 1px solid #f0f0f0;
+          font-size: 1rem;
         }
         h2.section-title {
           font-size: 1.6rem;
@@ -367,12 +390,17 @@
   </head>
   <body>
     <div class="topbar">
-      <a class="brand" href="#top">
+      <div class="brand">
         <span class="eyebrow">sugiro.ai</span>
         <span class="h1cc">Claude Code</span>
         <span class="h1bp">Guide</span>
-      </a>
-      <nav class="topnav">
+      </div>
+      <button id="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="topnav" id="topnav">
         <a href="#install">Install Claude Code</a>
         <a href="#build">Build Something</a>
         <a href="#people">Learn More</a>
@@ -469,20 +497,26 @@
 
     <footer>
       <div class="footer-title">
-        Developed by <a href="https://x.com/lularocha">Lula Rocha</a> /
-        <a href="https://sugiro.ai/">sugiro.ai</a>
+        Developed by Lula Rocha / <a href="https://sugiro.ai/">sugiro.ai</a>
       </div>
     </footer>
 
-    <button id="scroll-to-top" aria-label="Scroll to top">↑</button>
-
     <script>
-      const scrollBtn = document.getElementById("scroll-to-top");
-      window.addEventListener("scroll", () => {
-        scrollBtn.classList.toggle("visible", window.scrollY > 400);
+      // Mobile hamburger menu
+      const hamburger = document.getElementById("hamburger");
+      const topnav = document.getElementById("topnav");
+      function closeMenu() {
+        hamburger.classList.remove("open");
+        topnav.classList.remove("open");
+        hamburger.setAttribute("aria-expanded", "false");
+      }
+      hamburger.addEventListener("click", () => {
+        const open = hamburger.classList.toggle("open");
+        topnav.classList.toggle("open", open);
+        hamburger.setAttribute("aria-expanded", open ? "true" : "false");
       });
-      scrollBtn.addEventListener("click", () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
+      topnav.addEventListener("click", (e) => {
+        if (e.target.tagName === "A") closeMenu();
       });
     </script>
   </body>
