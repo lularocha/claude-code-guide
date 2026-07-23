@@ -298,6 +298,10 @@
         color: #333;
       }
 
+      .resources-title {
+        margin-top: 2rem;
+      }
+
       /* Projects list */
       .project {
         margin-bottom: 1.5rem;
@@ -375,7 +379,12 @@
           </li>
           <li data-i18n="install_li2">
             Se você não tem o npm, instale primeiro o Node.js em
-            <a href="https://nodejs.org/">nodejs.org</a>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://nodejs.org/"
+              >nodejs.org</a
+            >
           </li>
           <li data-i18n="install_li3">
             No Windows, use o instalador nativo do site da Anthropic
@@ -387,7 +396,10 @@
         </ul>
         <p data-i18n="install_docs">
           Veja o
-          <a href="https://code.claude.com/docs/en/quickstart"
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://code.claude.com/docs/en/quickstart"
             >guia oficial de instalação e configuração</a
           >
           para todos os detalhes.
@@ -396,7 +408,9 @@
 
       <!-- ================= BUILD SOMETHING ================= -->
       <section id="build">
-        <h2 class="section-title" data-i18n="build_title">Construa Algo</h2>
+        <h2 class="section-title" data-i18n="build_title">
+          Construa alguma coisa
+        </h2>
         <ul>
           <li data-i18n="build_li1">Crie uma pasta para o projeto.</li>
           <li data-i18n="build_li2">
@@ -407,14 +421,19 @@
         </ul>
         <div class="personal-note" data-i18n="build_note">
           Não sabe o que pedir? Você pode usar a minha
-          <a href="https://prompt.sugiro.ai/">ferramenta Prompt Builder</a> para
-          criar um prompt claro e detalhado.
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://prompt.sugiro.ai/"
+            >ferramenta Prompt Builder</a
+          >
+          para criar um prompt claro e detalhado.
         </div>
       </section>
 
       <!-- ================= LEARN MORE ================= -->
       <section id="people">
-        <h2 class="section-title" data-i18n="learn_title">Saiba Mais</h2>
+        <h2 class="section-title" data-i18n="learn_title">Aprenda mais</h2>
 
         <p data-i18n="learn_lead">
           Siga pessoas experientes, você pode começar com:
@@ -423,32 +442,77 @@
         <ul class="people">
           <li>
             <span class="name">Matt Pocock</span>
-            <a href="https://x.com/mattpocockuk">@mattpocockuk</a>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://x.com/mattpocockuk"
+              >@mattpocockuk</a
+            >
           </li>
           <li>
             <span class="name">Andrej Karpathy</span>
-            <a href="https://x.com/karpathy">@karpathy</a>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://x.com/karpathy"
+              >@karpathy</a
+            >
           </li>
           <li>
             <span class="name">Boris Cherny</span>
-            <a href="https://x.com/bcherny">@bcherny</a>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://x.com/bcherny"
+              >@bcherny</a
+            >
+          </li>
+        </ul>
+
+        <p class="resources-title" data-i18n="resources_title">
+          <strong>Recursos</strong>
+        </p>
+        <ul class="people">
+          <li data-i18n="resource1">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.aicodingdictionary.com/"
+              >Matt Pocock's AI Coding Dictionary</a
+            >
+          </li>
+          <li data-i18n="resource2">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://glossary.sugiro.ai/"
+              >Lula Rocha's Glossary Builder</a
+            >
           </li>
         </ul>
       </section>
 
       <!-- ================= MY PROJECTS ================= -->
       <section id="more">
-        <h2 class="section-title" data-i18n="projects_title">Meus Projetos</h2>
+        <h2 class="section-title" data-i18n="projects_title">Meus projetos</h2>
         <p data-i18n="projects_lead">
-          Uma vitrine de projetos construídos com o Claude Code e outras IAs:
-          <a href="https://sugiro.ai/ai-projects">sugiro.ai/ai-projects</a>
+          Uma coleção de projetos construídos com o Claude Code e outras IAs:
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://sugiro.ai/ai-projects"
+            >sugiro.ai/ai-projects</a
+          >
         </p>
       </section>
     </main>
 
     <footer>
       <div class="footer-title" data-i18n="footer">
-        Desenvolvido por Lula Rocha / <a href="https://sugiro.ai/">sugiro.ai</a>
+        Desenvolvido por Lula Rocha /
+        <a target="_blank" rel="noopener noreferrer" href="https://sugiro.ai/"
+          >sugiro.ai</a
+        >
       </div>
     </footer>
 
@@ -461,27 +525,32 @@
           install_li1:
             "On Mac, open Terminal and run: <code>npm install -g @anthropic-ai/claude-code</code>",
           install_li2:
-            'If you don\'t have npm, install Node.js first from <a href="https://nodejs.org/">nodejs.org</a>',
+            'If you don\'t have npm, install Node.js first from <a target="_blank" rel="noopener noreferrer" href="https://nodejs.org/">nodejs.org</a>',
           install_li3:
             "On Windows, use the native installer from Anthropic's website",
           install_li4:
             "After installation, verify it works by typing: <code>claude</code>",
           install_docs:
-            'See the official <a href="https://code.claude.com/docs/en/quickstart">Installation &amp; Setup guide</a> for full details.',
+            'See the official <a target="_blank" rel="noopener noreferrer" href="https://code.claude.com/docs/en/quickstart">Installation &amp; Setup guide</a> for full details.',
           build_title: "Build Something",
           build_li1: "Create a project folder.",
           build_li2:
             "Open a terminal window at that folder and start Claude by typing <code>claude</code>.",
           build_li3: "Ask Claude to build something.",
           build_note:
-            'Not sure what to ask for? You can use my <a href="https://prompt.sugiro.ai/">Prompt Builder tool</a> to craft a clear, detailed prompt.',
+            'Not sure what to ask for? You can use my <a target="_blank" rel="noopener noreferrer" href="https://prompt.sugiro.ai/">Prompt Builder tool</a> to craft a clear, detailed prompt.',
           learn_title: "Learn More",
           learn_lead: "Follow experienced people, you can start with:",
+          resources_title: "<strong>Resources</strong>",
+          resource1:
+            '<a target="_blank" rel="noopener noreferrer" href="https://www.aicodingdictionary.com/">Matt Pocock\'s AI Coding Dictionary</a>',
+          resource2:
+            '<a target="_blank" rel="noopener noreferrer" href="https://glossary.sugiro.ai/">Lula Rocha\'s Glossary Builder</a>',
           projects_title: "My Projects",
           projects_lead:
-            'A showcase of projects built with Claude Code and other AIs: <a href="https://sugiro.ai/ai-projects">sugiro.ai/ai-projects</a>',
+            'A showcase of projects built with Claude Code and other AIs: <a target="_blank" rel="noopener noreferrer" href="https://sugiro.ai/ai-projects">sugiro.ai/ai-projects</a>',
           footer:
-            'Developed by Lula Rocha / <a href="https://sugiro.ai/">sugiro.ai</a>',
+            'Developed by Lula Rocha / <a target="_blank" rel="noopener noreferrer" href="https://sugiro.ai/">sugiro.ai</a>',
         },
         pt: {
           install_title: "Instale o Claude Code",
@@ -490,27 +559,32 @@
           install_li1:
             "No Mac, abra o Terminal e execute: <code>npm install -g @anthropic-ai/claude-code</code>",
           install_li2:
-            'Se você não tem o npm, instale primeiro o Node.js em <a href="https://nodejs.org/">nodejs.org</a>',
+            'Se você não tem o npm, instale primeiro o Node.js em <a target="_blank" rel="noopener noreferrer" href="https://nodejs.org/">nodejs.org</a>',
           install_li3:
             "No Windows, use o instalador nativo do site da Anthropic",
           install_li4:
             "Após a instalação, verifique se funciona digitando: <code>claude</code>",
           install_docs:
-            'Veja o <a href="https://code.claude.com/docs/en/quickstart">guia oficial de instalação e configuração</a> para todos os detalhes.',
-          build_title: "Construa Algo",
+            'Veja o <a target="_blank" rel="noopener noreferrer" href="https://code.claude.com/docs/en/quickstart">guia oficial de instalação e configuração</a> para todos os detalhes.',
+          build_title: "Construa alguma coisa",
           build_li1: "Crie uma pasta para o projeto.",
           build_li2:
             "Abra uma janela de terminal nessa pasta e inicie o Claude digitando <code>claude</code>.",
           build_li3: "Peça ao Claude para construir algo.",
           build_note:
-            'Não sabe o que pedir? Você pode usar a minha <a href="https://prompt.sugiro.ai/">ferramenta Prompt Builder</a> para criar um prompt claro e detalhado.',
-          learn_title: "Saiba Mais",
+            'Não sabe o que pedir? Você pode usar a minha <a target="_blank" rel="noopener noreferrer" href="https://prompt.sugiro.ai/">ferramenta Prompt Builder</a> para criar um prompt claro e detalhado.',
+          learn_title: "Aprenda mais",
           learn_lead: "Siga pessoas experientes, você pode começar com:",
-          projects_title: "Meus Projetos",
+          resources_title: "<strong>Recursos</strong>",
+          resource1:
+            '<a target="_blank" rel="noopener noreferrer" href="https://www.aicodingdictionary.com/">Matt Pocock\'s AI Coding Dictionary</a>',
+          resource2:
+            '<a target="_blank" rel="noopener noreferrer" href="https://glossary.sugiro.ai/">Lula Rocha\'s Glossary Builder</a>',
+          projects_title: "Meus projetos",
           projects_lead:
-            'Uma vitrine de projetos construídos com o Claude Code e outras IAs: <a href="https://sugiro.ai/ai-projects">sugiro.ai/ai-projects</a>',
+            'Uma coleção de projetos construídos com o Claude Code e outras IAs: <a target="_blank" rel="noopener noreferrer" href="https://sugiro.ai/ai-projects">sugiro.ai/ai-projects</a>',
           footer:
-            'Desenvolvido por Lula Rocha / <a href="https://sugiro.ai/">sugiro.ai</a>',
+            'Desenvolvido por Lula Rocha / <a target="_blank" rel="noopener noreferrer" href="https://sugiro.ai/">sugiro.ai</a>',
         },
       };
 
