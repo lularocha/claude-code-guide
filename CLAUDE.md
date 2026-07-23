@@ -1,22 +1,31 @@
 # Claude Code Guide
 
-A beginner-focused learning resource for Claude Code.
+A beginner-focused learning resource for Claude Code, built as a single-page site.
 
 ## Content Guidelines
 
 1. Focus exclusively on Claude Code (the CLI agent tool)
-2. Avoid generic AI/prompting advice that could apply to any chatbot (Exception: `reference/prompts.md` provides general prompting context for beginners)
+2. Avoid generic AI/prompting advice that could apply to any chatbot
 3. Use practical, actionable examples
 4. Write for beginners who are learning
 5. Reference official Claude Code documentation when possible
 
-## File Organization
+## Structure
 
-- `home/` — Landing page and learning path
-- `getting-started/` — Installation and effective communication with Claude Code
-- `advanced/` — Advanced techniques, CLAUDE.md guide, skills, and autonomous loops
-- `reference/` — Glossary, resources, and people to follow
-- `examples/` — Project showcases
+The entire site is a single static file: `index.html`. It has three sections,
+navigated via anchor links in a sticky top bar:
+
+- **Getting Started** — install, how to talk to Claude Code, create your first project
+- **People** — developers and educators to follow (name + profile link)
+- **More** — showcase of projects built with Claude Code
+
+Supporting files:
+
+- `viewer/images/` — favicon and image assets
+- `README.md` — project overview
+
+There is no build step and no markdown loading — all content lives directly in
+`index.html` as static HTML.
 
 ## Writing Style
 
@@ -35,9 +44,8 @@ A beginner-focused learning resource for Claude Code.
 ## Important Notes
 
 - Focus on Claude Code specific content only
-- Do not add generic AI/prompting advice (except in `reference/prompts.md`)
-- Keep navigation order: Getting Started → Advanced → Reference
-- Use h2 headers (##) for main topics with dividers (---) between sections
-- Add external link icons to all http/https links
-- Maintain consistent formatting across all pages
+- Do not add generic AI/prompting advice
+- Keep section order: Getting Started → People → More
+- Add external link icons to all http/https links (handled via CSS `a[href^="http"]::after`)
+- Maintain consistent formatting across sections
 - Update README.md and this CLAUDE.md when structure changes

@@ -6,47 +6,26 @@ A beginner-focused learning resource for Claude Code—the command-line tool tha
 
 This site documents my Claude Code learning journey, and it's built with Claude Code itself. It's my feedback learning loop: study, practice, learn, document, improve.
 
-## What's Inside
+It's a single-page site (`index.html`) with three sections:
 
-- **Getting Started** - Installation and effective communication patterns
-- **Advanced** - Techniques for power users (slash commands, MCP servers, skills, autonomous loops)
-- **Reference** - Glossary, resources, and people to follow
-- **Examples** - My projects built with Claude Code
+- **Getting Started** — Install, how to talk to Claude Code, and create your first project
+- **People** — Developers and educators to follow
+- **More** — A showcase of projects built with Claude Code
 
 ## View the Site
 
 **Live Site:** https://ccguide.vercel.app
 
-To run locally, start a local server:
+To run locally, just open `index.html` in your browser, or start a local server:
 
 ```bash
-# Using Python
-python -m http.server
-
-# Using Node.js
-npx http-server
-
-# Using PHP
-php -S localhost
+python -m http.server   # then open http://localhost:8000
 ```
-
-Then open `http://localhost:8000` (or the port shown in your terminal) in your browser.
-
-## Key Features
-
-- Clean, scannable navigation
-- Mobile-responsive design
-- External link indicators
-- Dark code blocks with syntax highlighting
-- Built entirely with Claude Code
-
-## Focus
-
-This guide focuses specifically on **Claude Code**—the CLI agent tool. Content is filtered to be Claude Code specific, avoiding generic AI prompting advice.
 
 ## References
 
 All content references official Claude Code documentation:
+
 - [Claude Code Documentation](https://code.claude.com/docs/en/overview)
 - [Claude Code Best Practices](https://www.anthropic.com/engineering/claude-code-best-practices)
 
