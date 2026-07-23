@@ -301,6 +301,68 @@
         margin-top: 2rem;
       }
 
+      /* Publish flow diagram */
+      .flow {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin: 50px 0;
+      }
+
+      .flow-node {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.4rem;
+        width: 26%;
+        padding: 1rem 0.5rem;
+        border-radius: 12px;
+        background: #f0f0f0;
+        text-align: center;
+      }
+
+      .flow-icon {
+        width: 40px;
+        height: 40px;
+        color: #f60;
+      }
+
+      .flow-icon svg {
+        width: 100%;
+        height: 100%;
+      }
+
+      .flow-label {
+        font-weight: 600;
+        font-size: 1.15rem;
+      }
+
+      .flow-sub {
+        font-size: 0.85rem;
+        color: #888;
+      }
+
+      .flow-arrow {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        align-items: center;
+        gap: 2px;
+        min-width: 56px;
+        color: #333;
+        font-size: 0.85rem;
+        font-weight: 600;
+      }
+
+      .flow-arrow::after {
+        content: "→";
+        font-size: 1.4rem;
+        line-height: 1;
+        color: #f80;
+      }
+
       /* Projects list */
       .project {
         margin-bottom: 1.5rem;
@@ -339,6 +401,20 @@
         }
         h2.section-title {
           font-size: 1.6rem;
+        }
+        .flow {
+          flex-direction: column;
+        }
+        .flow-node {
+          width: 100%;
+        }
+        .flow-arrow {
+          flex: none;
+          flex-direction: row;
+          gap: 6px;
+        }
+        .flow-arrow::after {
+          content: "↓";
         }
       }
     </style>
@@ -471,6 +547,77 @@
         <h2 class="section-title" data-i18n="publish_title">
           Publique online com GitHub e Vercel
         </h2>
+
+        <div
+          class="flow"
+          role="img"
+          aria-label="Local Folder to GitHub Repo to Vercel deployment"
+        >
+          <div class="flow-node">
+            <div class="flow-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+                />
+              </svg>
+            </div>
+            <div class="flow-label" data-i18n="diagram_local">Pasta Local</div>
+            <div class="flow-sub" data-i18n="diagram_local_sub">
+              Seu Projeto
+            </div>
+          </div>
+
+          <div class="flow-arrow"><span>git push</span></div>
+
+          <div class="flow-node">
+            <div class="flow-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="6" cy="6" r="2.5" />
+                <circle cx="6" cy="18" r="2.5" />
+                <circle cx="18" cy="9" r="2.5" />
+                <path
+                  d="M6 8.5v7M8.4 6.4l7.2 1.4M17.5 11.4c0 3-2.5 4.6-5.5 4.6H8.5"
+                />
+              </svg>
+            </div>
+            <div class="flow-label">GitHub</div>
+            <div class="flow-sub" data-i18n="diagram_repo">Repositório</div>
+          </div>
+
+          <div class="flow-arrow"><span>deploy</span></div>
+
+          <div class="flow-node">
+            <div class="flow-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M12 3 22 21H2z" />
+              </svg>
+            </div>
+            <div class="flow-label">Vercel</div>
+            <div class="flow-sub" data-i18n="diagram_live">No ar</div>
+          </div>
+        </div>
+
         <ol>
           <li data-i18n="publish_li1">
             Crie uma conta no
@@ -632,6 +779,10 @@
             'Log in to <a target="_blank" rel="noopener noreferrer" href="https://vercel.com/">Vercel</a> using your GitHub account.',
           publish_li5:
             "Create a project, choose your GitHub repository, review the settings, and deploy.",
+          diagram_local: "Local Folder",
+          diagram_local_sub: "Your Project",
+          diagram_repo: "Repository",
+          diagram_live: "Live",
           learn_title: "Learn More",
           learn_lead: "Follow experienced people, you can start with:",
           resources_title: "<strong>Resources</strong>",
@@ -685,6 +836,10 @@
             'Entre no <a target="_blank" rel="noopener noreferrer" href="https://vercel.com/">Vercel</a> usando a sua conta do GitHub.',
           publish_li5:
             "Crie um projeto, escolha o seu repositório do GitHub, revise as configurações e faça o deploy.",
+          diagram_local: "Pasta Local",
+          diagram_local_sub: "Seu Projeto",
+          diagram_repo: "Repositório",
+          diagram_live: "No ar",
           learn_title: "Aprenda mais",
           learn_lead: "Siga pessoas experientes, você pode começar com:",
           resources_title: "<strong>Recursos</strong>",
