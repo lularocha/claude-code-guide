@@ -1,17 +1,17 @@
-# Claude Code Guide
+# AI Coding Guide
 
-A beginner-focused learning resource for Claude Code—the command-line tool that brings AI into your development workflow.
+A beginner-focused learning resource for agentic CLI coding tools—Claude Code and Codex—that bring AI into your development workflow.
 
 ## About
 
-This site documents my Claude Code learning journey, and it's built with Claude Code itself. It's my feedback learning loop: study, practice, learn, document, improve.
+This site documents my AI coding learning journey, and it's built with these tools. It's my feedback learning loop: study, practice, learn, document, improve.
 
-It's a single-page site (`index.html`) with four sections:
+It's a bilingual (EN / PT-BR) single-page site (`index.html`) with four sections:
 
-- **Install Claude Code** — How to install and start Claude Code
-- **Build Something** — A simple first-project workflow
-- **Learn More** — Experienced people to follow
-- **My Projects** — A showcase of projects built with Claude Code
+- **Install** — How to install and start Claude Code and Codex CLI
+- **Build Something** — A simple first-project workflow with either tool
+- **Learn More** — Experienced people to follow, plus resources
+- **My Projects** — A showcase of projects built with these tools
 
 ## View the Site
 
@@ -25,10 +25,8 @@ python -m http.server   # then open http://localhost:8000
 
 ## References
 
-All content references official Claude Code documentation:
-
 - [Claude Code Documentation](https://code.claude.com/docs/en/overview)
-- [Claude Code Best Practices](https://www.anthropic.com/engineering/claude-code-best-practices)
+- [Codex CLI](https://github.com/openai/codex)
 
 ---
 
