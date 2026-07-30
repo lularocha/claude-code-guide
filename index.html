@@ -437,21 +437,45 @@
     </div>
 
     <main id="top">
-      <!-- ================= INSTALL CLAUDE CODE ================= -->
-      <section id="install">
-        <h2 class="section-title" data-i18n="install_title">Instalação</h2>
-
-        <p data-i18n="install_lead">
+      <!-- ================= INTRO ================= -->
+      <section id="intro">
+        <h2 class="section-title" data-i18n="install_intro_title">
+          Introdução
+        </h2>
+        <p data-i18n="install_intro">
           <strong
             >O Claude Code e o Codex são ferramentas de programação com agentes
             para o seu fluxo de desenvolvimento. Eles enxergam o seu código,
             criam e editam arquivos e executam comandos nele.</strong
           >
         </p>
+        <p data-i18n="install_intro_subscription">
+          Para usar o Claude Code ou o Codex, você precisa de uma assinatura ou
+          de créditos. Para o Claude Code, use uma assinatura Claude (Pro ou
+          Max) ou créditos no
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://console.anthropic.com/"
+            >Anthropic Console</a
+          >. Para o Codex, use uma assinatura ChatGPT (Plus ou Pro) ou créditos
+          na
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://platform.openai.com/"
+            >plataforma da OpenAI</a
+          >.
+        </p>
+      </section>
+
+      <!-- ================= INSTALL CLAUDE and CODEX ================= -->
+      <section id="install">
+        <h2 class="section-title" data-i18n="install_title">Instalação</h2>
 
         <p data-i18n="install_node">
           Primeiro, verifique se você tem o Node.js — execute
-          <code>node -v</code> no terminal. Se não tiver, instale-o em
+          <code>node -v</code> no terminal. <br />Se não tiver, instale-o em
           <a
             target="_blank"
             rel="noopener noreferrer"
@@ -739,10 +763,13 @@
       const translations = {
         en: {
           install_title: "Install",
-          install_lead:
+          install_intro_title: "Introduction",
+          install_intro:
             "<strong>Claude Code and Codex are agentic coding tools for your development workflow. They can see your codebase, create and edit files, and run commands in it.</strong>",
+          install_intro_subscription:
+            'To use Claude Code or Codex, you need a subscription or credits. For Claude Code, use a Claude subscription (Pro or Max) or credits in the <a target="_blank" rel="noopener noreferrer" href="https://console.anthropic.com/">Anthropic Console</a>. For Codex, use a ChatGPT subscription (Plus or Pro) or credits on the <a target="_blank" rel="noopener noreferrer" href="https://platform.openai.com/">OpenAI platform</a>.',
           install_node:
-            'First, check whether you have Node.js — run <code>node -v</code> in your terminal. If you don\'t, install it from <a target="_blank" rel="noopener noreferrer" href="https://nodejs.org/">nodejs.org</a> (this also installs npm).',
+            'First, check whether you have Node.js — run <code>node -v</code> in your terminal. <br>If you don\'t, install it from <a target="_blank" rel="noopener noreferrer" href="https://nodejs.org/">nodejs.org</a> (this also installs npm).',
           install_li1:
             "On Mac, open Terminal and run: <code>npm install -g @anthropic-ai/claude-code</code>",
           install_li3:
@@ -796,10 +823,13 @@
         },
         pt: {
           install_title: "Instalação",
-          install_lead:
+          install_intro_title: "Introdução",
+          install_intro:
             "<strong>O Claude Code e o Codex são ferramentas de programação com agentes para o seu fluxo de desenvolvimento. Eles enxergam o seu código, criam e editam arquivos e executam comandos nele.</strong>",
+          install_intro_subscription:
+            'Para usar o Claude Code ou o Codex, você precisa de uma assinatura ou de créditos. Para o Claude Code, use uma assinatura Claude (Pro ou Max) ou créditos no <a target="_blank" rel="noopener noreferrer" href="https://console.anthropic.com/">Anthropic Console</a>. Para o Codex, use uma assinatura ChatGPT (Plus ou Pro) ou créditos na <a target="_blank" rel="noopener noreferrer" href="https://platform.openai.com/">plataforma da OpenAI</a>.',
           install_node:
-            'Primeiro, verifique se você tem o Node.js — execute <code>node -v</code> no terminal. Se não tiver, instale-o em <a target="_blank" rel="noopener noreferrer" href="https://nodejs.org/">nodejs.org</a> (isso também instala o npm).',
+            'Primeiro, verifique se você tem o Node.js — execute <code>node -v</code> no terminal. <br>Se não tiver, instale-o em <a target="_blank" rel="noopener noreferrer" href="https://nodejs.org/">nodejs.org</a> (isso também instala o npm).',
           install_li1:
             "No Mac, abra o Terminal e execute: <code>npm install -g @anthropic-ai/claude-code</code>",
           install_li3:
